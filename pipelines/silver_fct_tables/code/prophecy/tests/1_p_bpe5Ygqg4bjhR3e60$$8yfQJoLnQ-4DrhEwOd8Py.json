@@ -1,0 +1,59 @@
+{
+  "unitTests" : [ {
+    "data" : {
+      "SO2Cy86Wor7oPFNhL0jAt$$6H3RyBGp4hlW4JDG_yVOO" : {
+        "values" : [ [ "9061001869999580126" ], [ "9130168565477032521" ], [ "9107876713192723716" ], [ "9130537384136084595" ], [ "9213833265465585133" ], [ "8701070990533038344" ], [ "9108427883277307465" ], [ "9043552582244045160" ], [ "9202639843017352838" ], [ "9211062829479498710" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "product_id",
+            "type" : "long",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "XEVLe9xSaszbf3ao2XX9V$$svTjHuU75ABm7bWKj3vhA" : {
+        "values" : [ [ "9061001869999580126", "5.652002809516716e+18" ], [ "9130168565477032521", "3.6258512439208556e+18" ], [ "9107876713192723716", "3.9371084923284767e+18" ], [ "9130537384136084595", "6.24144679307104e+18" ], [ "9213833265465585133", "8.356439266745683e+18" ], [ "8701070990533038344", "7.879127381003649e+18" ], [ "9108427883277307465", "1.4948532809533148e+18" ], [ "9043552582244045160", "5.206802500039264e+18" ], [ "9202639843017352838", "3.5513402224456013e+18" ], [ "9211062829479498710", "1.9729203762427994e+18" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "product_id",
+            "type" : "long",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "rand_product_id",
+            "type" : "double",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ {
+          "name" : "max_product_id",
+          "expression" : {
+            "predicate" : "rand_product_id < product_id",
+            "format" : "sql"
+          }
+        } ]
+      }
+    },
+    "name" : "testRandProductId",
+    "testType" : "outputPredicate",
+    "language" : "python"
+  } ],
+  "language" : "python"
+}

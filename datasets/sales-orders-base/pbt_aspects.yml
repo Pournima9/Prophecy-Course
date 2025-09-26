@@ -1,0 +1,183 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: clicked_items
+    type:
+      type: array
+      elementType:
+        type: array
+        elementType: string
+        containsNull: true
+      containsNull: true
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: customer_id
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: customer_name
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: number_of_line_items
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: order_datetime
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: order_number
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: ordered_products
+    type:
+      type: array
+      elementType:
+        type: struct
+        fields:
+        - name: curr
+          type: string
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: id
+          type: string
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: name
+          type: string
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: price
+          type: long
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: promotion_info
+          type:
+            type: struct
+            fields:
+            - name: promo_disc
+              type: double
+              nullable: true
+              metadata:
+                description: ''
+                mappings: []
+                tags: []
+            - name: promo_id
+              type: long
+              nullable: true
+              metadata:
+                description: ''
+                mappings: []
+                tags: []
+            - name: promo_item
+              type: string
+              nullable: true
+              metadata:
+                description: ''
+                mappings: []
+                tags: []
+            - name: promo_qty
+              type: long
+              nullable: true
+              metadata:
+                description: ''
+                mappings: []
+                tags: []
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: qty
+          type: long
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: unit
+          type: string
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+      containsNull: true
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: promo_info
+    type:
+      type: array
+      elementType:
+        type: struct
+        fields:
+        - name: promo_disc
+          type: double
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: promo_id
+          type: long
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: promo_item
+          type: string
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: promo_qty
+          type: long
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+      containsNull: true
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

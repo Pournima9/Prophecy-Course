@@ -1,0 +1,25 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: product_name
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: profit_usd
+    type: decimal(20,2)
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: excess_inventory_cost_usd
+    type: decimal(20,2)
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

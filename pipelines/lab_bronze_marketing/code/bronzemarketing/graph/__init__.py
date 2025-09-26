@@ -1,0 +1,4 @@
+from .raw_marketing_campaigns import raw_marketing_campaigns
+from .raw_marketing_events import raw_marketing_events
+from .write_marketing_event import write_marketing_event
+from .write_marketing_campaigns import write_marketing_campaigns

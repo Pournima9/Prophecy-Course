@@ -1,0 +1,18 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: campaign_profit
+    type: decimal(31,2)
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: campaign_quarter
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

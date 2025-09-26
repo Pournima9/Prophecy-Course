@@ -1,0 +1,547 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.10.0",
+        "pyPiVersion" : "1.9.49"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/sol_gold_marketing",
+    "pipelineSettingsInfo" : {
+      "isNullValuesInUnitTestsEnabled" : true
+    },
+    "language" : "python",
+    "fabricId" : "33408",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "prophecyteam.labsamples.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions", "prophecy.streaming.functions", "prophecyteam.prophecyanalyticalfunctionspython.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "silver",
+          "kind" : {
+            "type" : "string",
+            "value" : "silver"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "gold",
+          "kind" : {
+            "type" : "string",
+            "value" : "gold"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12656",
+      "projectName" : "ProphecyStreamingPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "16362",
+      "projectName" : "ProphecyAnalyticalFunctionsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "sol_gold_marketing",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "bMFm4BuyrkL9yEvpVT--E$$A5LzrXpmui1OYvfCg_xhM",
+    "source" : "CcAo98GLI5UnxpIO3vAze$$iaM4nfcPXPj3zKZGltIFD",
+    "sourcePort" : "8x-iqY0-kiEaSWKIv3AWQ$$o4H0dD-3tujtVXKjnT__3",
+    "target" : "ZDUO4jsnrqDZTtDSjlpw8$$Save81ma8ON2Ivup-jV7r",
+    "targetPort" : "j34ARhJM2D5_CDLxxN9W0$$87mb4EoEQd_f9PQDDFC7B"
+  }, {
+    "id" : "8UiEEukMikZA_zp22R_OD$$dSf_7HkIMjaFjJkM2TkPs",
+    "source" : "ZDUO4jsnrqDZTtDSjlpw8$$Save81ma8ON2Ivup-jV7r",
+    "sourcePort" : "hMSP6jXXKT_QOmFLVC2lf$$JDPLMXH0u8mA_oSW2OXz6",
+    "target" : "vw4OqwhfAhmMCIJ8iYFz2$$jKkeAC_I5mXDpB3gPa8UG",
+    "targetPort" : "K28RgpC9wX2zcUcpyJt75$$hV6eqnqfEGYTNToue1Qfp"
+  }, {
+    "id" : "q8hx30AHt0-RHDNXkNjGx$$WCCrSANenRaPh85zlBt_r",
+    "source" : "vw4OqwhfAhmMCIJ8iYFz2$$jKkeAC_I5mXDpB3gPa8UG",
+    "sourcePort" : "1HmhZikTBl9zTESatrfhG$$OobLN4ShdJ6WdVk_VbEbY",
+    "target" : "B9_22ip4iB9n5RtZaBPw2$$zp5dKV7YuL9phm5dMcOnr",
+    "targetPort" : "HyovoQ5KoQHF81R0J9J6b$$E5xRXbueNEzwGrn7HSjWA"
+  }, {
+    "id" : "s839s12A_dvvo0VQth02V$$6T3WO9AbjedDB4rahaQIP",
+    "source" : "B9_22ip4iB9n5RtZaBPw2$$zp5dKV7YuL9phm5dMcOnr",
+    "sourcePort" : "Gz0oP-L95qpvHa7cREW-r$$8ygfSYqXzQu6VyXkw_7ou",
+    "target" : "OBehRD5jEckGJbYt5qAho$$eFb_hRi5ispZRvqIk0t1H",
+    "targetPort" : "zilk9LWXY53x0nqlxi-SU$$2lly3kvLR0fQqhb9H_Wdl"
+  } ],
+  "processes" : {
+    "CcAo98GLI5UnxpIO3vAze$$iaM4nfcPXPj3zKZGltIFD" : {
+      "id" : "CcAo98GLI5UnxpIO3vAze$$iaM4nfcPXPj3zKZGltIFD",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "silver-dim-campaign",
+        "slug" : "silver_dim_campaign",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "8x-iqY0-kiEaSWKIv3AWQ$$o4H0dD-3tujtVXKjnT__3",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/silver-dim-campaign"
+      }
+    },
+    "ZDUO4jsnrqDZTtDSjlpw8$$Save81ma8ON2Ivup-jV7r" : {
+      "id" : "ZDUO4jsnrqDZTtDSjlpw8$$Save81ma8ON2Ivup-jV7r",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "reformat_campaign_data",
+        "slug" : "reformat_campaign_data",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "j34ARhJM2D5_CDLxxN9W0$$87mb4EoEQd_f9PQDDFC7B",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "campaign_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_start",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_end",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_cost_micros_usd",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_micros_usd",
+              "type" : "double",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "hMSP6jXXKT_QOmFLVC2lf$$JDPLMXH0u8mA_oSW2OXz6",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "campaign_quarter",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat(year(to_date(campaign_start)), 'Q', quarter(to_date(campaign_start)))"
+          },
+          "description" : ""
+        }, {
+          "target" : "campaign_cost_micros_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "campaign_cost_micros_usd"
+          },
+          "description" : ""
+        }, {
+          "target" : "revenue_generated_micros_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "revenue_generated_micros_usd"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "j34ARhJM2D5_CDLxxN9W0$$87mb4EoEQd_f9PQDDFC7B##revenue_generated_micros_usd", "j34ARhJM2D5_CDLxxN9W0$$87mb4EoEQd_f9PQDDFC7B##campaign_start", "j34ARhJM2D5_CDLxxN9W0$$87mb4EoEQd_f9PQDDFC7B##campaign_cost_micros_usd" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "OBehRD5jEckGJbYt5qAho$$eFb_hRi5ispZRvqIk0t1H" : {
+      "id" : "OBehRD5jEckGJbYt5qAho$$eFb_hRi5ispZRvqIk0t1H",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "sol_gold_quarterly_campaign_revenue",
+        "slug" : "sol_gold_quarterly_campaign_revenue",
+        "x" : 800,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zilk9LWXY53x0nqlxi-SU$$2lly3kvLR0fQqhb9H_Wdl",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "campaign_quarter",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_cost_usd",
+              "type" : "decimal(30,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_usd",
+              "type" : "decimal(30,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_profit",
+              "type" : "decimal(31,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/sol_gold_quarterly_campaign_revenue"
+      }
+    },
+    "B9_22ip4iB9n5RtZaBPw2$$zp5dKV7YuL9phm5dMcOnr" : {
+      "id" : "B9_22ip4iB9n5RtZaBPw2$$zp5dKV7YuL9phm5dMcOnr",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "campaign_performance",
+        "slug" : "campaign_performance",
+        "x" : 620,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HyovoQ5KoQHF81R0J9J6b$$E5xRXbueNEzwGrn7HSjWA",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "campaign_quarter",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_cost_usd",
+              "type" : "decimal(30,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_usd",
+              "type" : "decimal(30,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "Gz0oP-L95qpvHa7cREW-r$$8ygfSYqXzQu6VyXkw_7ou",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "campaign_quarter",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "campaign_quarter"
+          },
+          "description" : ""
+        }, {
+          "target" : "campaign_cost_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "campaign_cost_usd"
+          },
+          "description" : ""
+        }, {
+          "target" : "revenue_generated_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "revenue_generated_usd"
+          },
+          "description" : ""
+        }, {
+          "target" : "campaign_profit",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "revenue_generated_usd - campaign_cost_usd"
+          },
+          "description" : ""
+        } ],
+        "importString" : "campaign_quarter,campaign_quarter\ncampaign_cost_usd,campaign_cost_usd\nrevenue_generated_usd,revenue_generated_usd\ncampaign_profit,revenue_generated_usd - campaign_cost_usd",
+        "activeTab" : "advanced",
+        "columnsSelector" : [ "HyovoQ5KoQHF81R0J9J6b$$E5xRXbueNEzwGrn7HSjWA##campaign_quarter", "HyovoQ5KoQHF81R0J9J6b$$E5xRXbueNEzwGrn7HSjWA##revenue_generated_usd", "HyovoQ5KoQHF81R0J9J6b$$E5xRXbueNEzwGrn7HSjWA##campaign_cost_usd" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "vw4OqwhfAhmMCIJ8iYFz2$$jKkeAC_I5mXDpB3gPa8UG" : {
+      "id" : "vw4OqwhfAhmMCIJ8iYFz2$$jKkeAC_I5mXDpB3gPa8UG",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "campaign_metrics_by_quarter",
+        "slug" : "campaign_metrics_by_quarter",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "K28RgpC9wX2zcUcpyJt75$$hV6eqnqfEGYTNToue1Qfp",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "campaign_quarter",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_cost_micros_usd",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_micros_usd",
+              "type" : "double",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "1HmhZikTBl9zTESatrfhG$$OobLN4ShdJ6WdVk_VbEbY",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "allIns" : false,
+        "doPivot" : false,
+        "aggregate" : [ {
+          "target" : "campaign_cost_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "cast(sum(campaign_cost_micros_usd) / pow(10,6) as decimal(30,2))"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "revenue_generated_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "cast(sum(revenue_generated_micros_usd) / pow(10,6) as decimal(30,2))"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ],
+        "allowSelection" : true,
+        "pivotColumn" : null,
+        "pivotValues" : [ ],
+        "importString" : "",
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ "K28RgpC9wX2zcUcpyJt75$$hV6eqnqfEGYTNToue1Qfp##campaign_cost_micros_usd", "K28RgpC9wX2zcUcpyJt75$$hV6eqnqfEGYTNToue1Qfp##revenue_generated_micros_usd", "K28RgpC9wX2zcUcpyJt75$$hV6eqnqfEGYTNToue1Qfp##campaign_quarter" ],
+        "groupBy" : [ {
+          "target" : "campaign_quarter",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "campaign_quarter"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Aggregate",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

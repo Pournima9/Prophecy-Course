@@ -1,0 +1,935 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.10.0",
+        "pyPiVersion" : "1.9.49"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/lab_sales_by_postcode",
+    "sourceSuggestions" : [ {
+      "sourceLabel" : "raw_customer_snapshot",
+      "sourceDatasetId" : "datasets/raw-customer-snapshot",
+      "canJoinWith" : [ {
+        "processLabel" : "bronze-sales",
+        "processId" : "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19",
+        "joinColumns" : [ "customer_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "customer_id" ],
+          "conditions" : [ {
+            "alias" : "raw_customer_snapshot",
+            "expression" : "('bronze-sales'['customer_id'] = raw_customer_snapshot.customer_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "signup_date",
+            "expression" : "raw_customer_snapshot.signup_date"
+          }, {
+            "alias" : "customer_name",
+            "expression" : "raw_customer_snapshot.customer_name"
+          }, {
+            "alias" : "phone_number",
+            "expression" : "raw_customer_snapshot.phone_number"
+          }, {
+            "alias" : "street_number",
+            "expression" : "raw_customer_snapshot.street_number"
+          }, {
+            "alias" : "street_name",
+            "expression" : "raw_customer_snapshot.street_name"
+          }, {
+            "alias" : "unit",
+            "expression" : "raw_customer_snapshot.unit"
+          }, {
+            "alias" : "city",
+            "expression" : "raw_customer_snapshot.city"
+          }, {
+            "alias" : "state",
+            "expression" : "raw_customer_snapshot.state"
+          }, {
+            "alias" : "postcode",
+            "expression" : "raw_customer_snapshot.postcode"
+          }, {
+            "alias" : "lat",
+            "expression" : "raw_customer_snapshot.lat"
+          }, {
+            "alias" : "lon",
+            "expression" : "raw_customer_snapshot.lon"
+          }, {
+            "alias" : "sale_date",
+            "expression" : "'bronze-sales'['sale_date']"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "'bronze-sales'['customer_id']"
+          }, {
+            "alias" : "order_id",
+            "expression" : "'bronze-sales'['order_id']"
+          }, {
+            "alias" : "total_price_usd_cents",
+            "expression" : "'bronze-sales'['total_price_usd_cents']"
+          }, {
+            "alias" : "num_products",
+            "expression" : "'bronze-sales'['num_products']"
+          }, {
+            "alias" : "products",
+            "expression" : "'bronze-sales'['products']"
+          } ],
+          "headAlias" : "datasets/raw-customer-snapshot"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "sol_customers_scd1",
+      "sourceDatasetId" : "datasets/sol_customers_scd1",
+      "canJoinWith" : [ {
+        "processLabel" : "bronze-sales",
+        "processId" : "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19",
+        "joinColumns" : [ "customer_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "customer_id" ],
+          "conditions" : [ {
+            "alias" : "sol_customers_scd1",
+            "expression" : "('bronze-sales'['customer_id'] = sol_customers_scd1.customer_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "signup_date",
+            "expression" : "sol_customers_scd1.signup_date"
+          }, {
+            "alias" : "customer_name",
+            "expression" : "sol_customers_scd1.customer_name"
+          }, {
+            "alias" : "phone_number",
+            "expression" : "sol_customers_scd1.phone_number"
+          }, {
+            "alias" : "street_number",
+            "expression" : "sol_customers_scd1.street_number"
+          }, {
+            "alias" : "street_name",
+            "expression" : "sol_customers_scd1.street_name"
+          }, {
+            "alias" : "unit",
+            "expression" : "sol_customers_scd1.unit"
+          }, {
+            "alias" : "city",
+            "expression" : "sol_customers_scd1.city"
+          }, {
+            "alias" : "state",
+            "expression" : "sol_customers_scd1.state"
+          }, {
+            "alias" : "postcode",
+            "expression" : "sol_customers_scd1.postcode"
+          }, {
+            "alias" : "lat",
+            "expression" : "sol_customers_scd1.lat"
+          }, {
+            "alias" : "lon",
+            "expression" : "sol_customers_scd1.lon"
+          }, {
+            "alias" : "sale_date",
+            "expression" : "'bronze-sales'['sale_date']"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "'bronze-sales'['customer_id']"
+          }, {
+            "alias" : "order_id",
+            "expression" : "'bronze-sales'['order_id']"
+          }, {
+            "alias" : "total_price_usd_cents",
+            "expression" : "'bronze-sales'['total_price_usd_cents']"
+          }, {
+            "alias" : "num_products",
+            "expression" : "'bronze-sales'['num_products']"
+          }, {
+            "alias" : "products",
+            "expression" : "'bronze-sales'['products']"
+          } ],
+          "headAlias" : "datasets/sol_customers_scd1"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "silver_fct_sales",
+      "sourceDatasetId" : "datasets/silver-fct-sales",
+      "canJoinWith" : [ {
+        "processLabel" : "bronze-sales",
+        "processId" : "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19",
+        "joinColumns" : [ "customer_id", "order_id", "sale_date" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "customer_id", "order_id", "sale_date" ],
+          "conditions" : [ {
+            "alias" : "silver_fct_sales",
+            "expression" : "((('bronze-sales'['customer_id'] = silver_fct_sales.customer_id) AND ('bronze-sales'['order_id'] = silver_fct_sales.order_id)) AND ('bronze-sales'['sale_date'] = silver_fct_sales.sale_date))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "sales_id",
+            "expression" : "silver_fct_sales.sales_id"
+          }, {
+            "alias" : "product_id",
+            "expression" : "silver_fct_sales.product_id"
+          }, {
+            "alias" : "price_usd_cents",
+            "expression" : "silver_fct_sales.price_usd_cents"
+          }, {
+            "alias" : "shipping_phone",
+            "expression" : "silver_fct_sales.shipping_phone"
+          }, {
+            "alias" : "shipping_full_address",
+            "expression" : "silver_fct_sales.shipping_full_address"
+          }, {
+            "alias" : "shipping_state",
+            "expression" : "silver_fct_sales.shipping_state"
+          }, {
+            "alias" : "sale_date",
+            "expression" : "'bronze-sales'['sale_date']"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "'bronze-sales'['customer_id']"
+          }, {
+            "alias" : "order_id",
+            "expression" : "'bronze-sales'['order_id']"
+          }, {
+            "alias" : "total_price_usd_cents",
+            "expression" : "'bronze-sales'['total_price_usd_cents']"
+          }, {
+            "alias" : "num_products",
+            "expression" : "'bronze-sales'['num_products']"
+          }, {
+            "alias" : "products",
+            "expression" : "'bronze-sales'['products']"
+          } ],
+          "headAlias" : "datasets/silver-fct-sales"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "bronze_sales_increment",
+      "sourceDatasetId" : "datasets/bronze-sales-increment",
+      "canJoinWith" : [ {
+        "processLabel" : "bronze-sales",
+        "processId" : "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19",
+        "joinColumns" : [ "customer_id", "order_id", "num_products" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "customer_id", "order_id", "num_products" ],
+          "conditions" : [ {
+            "alias" : "bronze_sales_increment",
+            "expression" : "((('bronze-sales'['customer_id'] = bronze_sales_increment.customer_id) AND ('bronze-sales'['num_products'] = bronze_sales_increment.num_products)) AND ('bronze-sales'['order_id'] = bronze_sales_increment.order_id))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "sale_date",
+            "expression" : "'bronze-sales'['sale_date']"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "'bronze-sales'['customer_id']"
+          }, {
+            "alias" : "order_id",
+            "expression" : "'bronze-sales'['order_id']"
+          }, {
+            "alias" : "total_price_usd_cents",
+            "expression" : "'bronze-sales'['total_price_usd_cents']"
+          }, {
+            "alias" : "num_products",
+            "expression" : "'bronze-sales'['num_products']"
+          }, {
+            "alias" : "products",
+            "expression" : "'bronze-sales'['products']"
+          } ],
+          "headAlias" : "datasets/bronze-sales-increment"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "customer_snapshots_all",
+      "sourceDatasetId" : "datasets/customer-snapshots-all",
+      "canJoinWith" : [ {
+        "processLabel" : "bronze-sales",
+        "processId" : "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19",
+        "joinColumns" : [ "customer_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "customer_id" ],
+          "conditions" : [ {
+            "alias" : "customer_snapshots_all",
+            "expression" : "('bronze-sales'['customer_id'] = customer_snapshots_all.customer_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "signup_date",
+            "expression" : "customer_snapshots_all.signup_date"
+          }, {
+            "alias" : "customer_name",
+            "expression" : "customer_snapshots_all.customer_name"
+          }, {
+            "alias" : "phone_number",
+            "expression" : "customer_snapshots_all.phone_number"
+          }, {
+            "alias" : "street_number",
+            "expression" : "customer_snapshots_all.street_number"
+          }, {
+            "alias" : "street_name",
+            "expression" : "customer_snapshots_all.street_name"
+          }, {
+            "alias" : "unit",
+            "expression" : "customer_snapshots_all.unit"
+          }, {
+            "alias" : "city",
+            "expression" : "customer_snapshots_all.city"
+          }, {
+            "alias" : "state",
+            "expression" : "customer_snapshots_all.state"
+          }, {
+            "alias" : "postcode",
+            "expression" : "customer_snapshots_all.postcode"
+          }, {
+            "alias" : "lat",
+            "expression" : "customer_snapshots_all.lat"
+          }, {
+            "alias" : "lon",
+            "expression" : "customer_snapshots_all.lon"
+          }, {
+            "alias" : "sale_date",
+            "expression" : "'bronze-sales'['sale_date']"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "'bronze-sales'['customer_id']"
+          }, {
+            "alias" : "order_id",
+            "expression" : "'bronze-sales'['order_id']"
+          }, {
+            "alias" : "total_price_usd_cents",
+            "expression" : "'bronze-sales'['total_price_usd_cents']"
+          }, {
+            "alias" : "num_products",
+            "expression" : "'bronze-sales'['num_products']"
+          }, {
+            "alias" : "products",
+            "expression" : "'bronze-sales'['products']"
+          } ],
+          "headAlias" : "datasets/customer-snapshots-all"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "bronze_customers_increment",
+      "sourceDatasetId" : "datasets/bronze-customers-increment",
+      "canJoinWith" : [ {
+        "processLabel" : "bronze-sales",
+        "processId" : "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19",
+        "joinColumns" : [ "customer_id" ],
+        "isRecommended" : false,
+        "properties" : {
+          "columnsSelector" : [ "customer_id" ],
+          "conditions" : [ {
+            "alias" : "bronze_customers_increment",
+            "expression" : "('bronze-sales'['customer_id'] = bronze_customers_increment.customer_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "signup_date",
+            "expression" : "bronze_customers_increment.signup_date"
+          }, {
+            "alias" : "valid_from",
+            "expression" : "bronze_customers_increment.valid_from"
+          }, {
+            "alias" : "valid_to",
+            "expression" : "bronze_customers_increment.valid_to"
+          }, {
+            "alias" : "is_original",
+            "expression" : "bronze_customers_increment.is_original"
+          }, {
+            "alias" : "is_current",
+            "expression" : "bronze_customers_increment.is_current"
+          }, {
+            "alias" : "customer_name",
+            "expression" : "bronze_customers_increment.customer_name"
+          }, {
+            "alias" : "phone_number",
+            "expression" : "bronze_customers_increment.phone_number"
+          }, {
+            "alias" : "street_number",
+            "expression" : "bronze_customers_increment.street_number"
+          }, {
+            "alias" : "street_name",
+            "expression" : "bronze_customers_increment.street_name"
+          }, {
+            "alias" : "unit",
+            "expression" : "bronze_customers_increment.unit"
+          }, {
+            "alias" : "city",
+            "expression" : "bronze_customers_increment.city"
+          }, {
+            "alias" : "state",
+            "expression" : "bronze_customers_increment.state"
+          }, {
+            "alias" : "postcode",
+            "expression" : "bronze_customers_increment.postcode"
+          }, {
+            "alias" : "lat",
+            "expression" : "bronze_customers_increment.lat"
+          }, {
+            "alias" : "lon",
+            "expression" : "bronze_customers_increment.lon"
+          }, {
+            "alias" : "sale_date",
+            "expression" : "'bronze-sales'['sale_date']"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "'bronze-sales'['customer_id']"
+          }, {
+            "alias" : "order_id",
+            "expression" : "'bronze-sales'['order_id']"
+          }, {
+            "alias" : "total_price_usd_cents",
+            "expression" : "'bronze-sales'['total_price_usd_cents']"
+          }, {
+            "alias" : "num_products",
+            "expression" : "'bronze-sales'['num_products']"
+          }, {
+            "alias" : "products",
+            "expression" : "'bronze-sales'['products']"
+          } ],
+          "headAlias" : "datasets/bronze-customers-increment"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "raw_sales",
+      "sourceDatasetId" : "datasets/raw-sales",
+      "canJoinWith" : [ {
+        "processLabel" : "bronze-sales",
+        "processId" : "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19",
+        "joinColumns" : [ "customer_id", "order_id", "num_products" ],
+        "isRecommended" : false,
+        "properties" : {
+          "columnsSelector" : [ "customer_id", "order_id", "num_products" ],
+          "conditions" : [ {
+            "alias" : "raw_sales",
+            "expression" : "((('bronze-sales'['customer_id'] = raw_sales.customer_id) AND ('bronze-sales'['num_products'] = raw_sales.num_products)) AND ('bronze-sales'['order_id'] = raw_sales.order_id))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "sale_date",
+            "expression" : "'bronze-sales'['sale_date']"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "'bronze-sales'['customer_id']"
+          }, {
+            "alias" : "order_id",
+            "expression" : "'bronze-sales'['order_id']"
+          }, {
+            "alias" : "total_price_usd_cents",
+            "expression" : "'bronze-sales'['total_price_usd_cents']"
+          }, {
+            "alias" : "num_products",
+            "expression" : "'bronze-sales'['num_products']"
+          }, {
+            "alias" : "products",
+            "expression" : "'bronze-sales'['products']"
+          } ],
+          "headAlias" : "datasets/raw-sales"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "silver_fct_orders",
+      "sourceDatasetId" : "datasets/silver-fct-orders",
+      "canJoinWith" : [ {
+        "processLabel" : "bronze-sales",
+        "processId" : "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19",
+        "joinColumns" : [ "customer_id", "order_id", "sale_date" ],
+        "isRecommended" : false,
+        "properties" : {
+          "columnsSelector" : [ "customer_id", "order_id", "sale_date" ],
+          "conditions" : [ {
+            "alias" : "silver_fct_orders",
+            "expression" : "((('bronze-sales'['customer_id'] = silver_fct_orders.customer_id) AND ('bronze-sales'['order_id'] = silver_fct_orders.order_id)) AND ('bronze-sales'['sale_date'] = silver_fct_orders.sale_date))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "shipping_phone",
+            "expression" : "silver_fct_orders.shipping_phone"
+          }, {
+            "alias" : "shipping_full_address",
+            "expression" : "silver_fct_orders.shipping_full_address"
+          }, {
+            "alias" : "shipping_state",
+            "expression" : "silver_fct_orders.shipping_state"
+          }, {
+            "alias" : "sale_date",
+            "expression" : "'bronze-sales'['sale_date']"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "'bronze-sales'['customer_id']"
+          }, {
+            "alias" : "order_id",
+            "expression" : "'bronze-sales'['order_id']"
+          }, {
+            "alias" : "total_price_usd_cents",
+            "expression" : "'bronze-sales'['total_price_usd_cents']"
+          }, {
+            "alias" : "num_products",
+            "expression" : "'bronze-sales'['num_products']"
+          }, {
+            "alias" : "products",
+            "expression" : "'bronze-sales'['products']"
+          } ],
+          "headAlias" : "datasets/silver-fct-orders"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "raw_sales_increment",
+      "sourceDatasetId" : "datasets/raw-sales-increment",
+      "canJoinWith" : [ {
+        "processLabel" : "bronze-sales",
+        "processId" : "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19",
+        "joinColumns" : [ "customer_id", "order_id", "num_products" ],
+        "isRecommended" : false,
+        "properties" : {
+          "columnsSelector" : [ "customer_id", "order_id", "num_products" ],
+          "conditions" : [ {
+            "alias" : "raw_sales_increment",
+            "expression" : "((('bronze-sales'['customer_id'] = raw_sales_increment.customer_id) AND ('bronze-sales'['num_products'] = raw_sales_increment.num_products)) AND ('bronze-sales'['order_id'] = raw_sales_increment.order_id))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "sale_date",
+            "expression" : "'bronze-sales'['sale_date']"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "'bronze-sales'['customer_id']"
+          }, {
+            "alias" : "order_id",
+            "expression" : "'bronze-sales'['order_id']"
+          }, {
+            "alias" : "total_price_usd_cents",
+            "expression" : "'bronze-sales'['total_price_usd_cents']"
+          }, {
+            "alias" : "num_products",
+            "expression" : "'bronze-sales'['num_products']"
+          }, {
+            "alias" : "products",
+            "expression" : "'bronze-sales'['products']"
+          } ],
+          "headAlias" : "datasets/raw-sales-increment"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "bronze_customers",
+      "sourceDatasetId" : "datasets/bronze-customers",
+      "canJoinWith" : [ {
+        "processLabel" : "bronze-sales",
+        "processId" : "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19",
+        "joinColumns" : [ "customer_id" ],
+        "isRecommended" : false,
+        "properties" : {
+          "columnsSelector" : [ "customer_id" ],
+          "conditions" : [ {
+            "alias" : "bronze_customers",
+            "expression" : "('bronze-sales'['customer_id'] = bronze_customers.customer_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "signup_date",
+            "expression" : "bronze_customers.signup_date"
+          }, {
+            "alias" : "valid_from",
+            "expression" : "bronze_customers.valid_from"
+          }, {
+            "alias" : "valid_to",
+            "expression" : "bronze_customers.valid_to"
+          }, {
+            "alias" : "is_original",
+            "expression" : "bronze_customers.is_original"
+          }, {
+            "alias" : "is_current",
+            "expression" : "bronze_customers.is_current"
+          }, {
+            "alias" : "customer_name",
+            "expression" : "bronze_customers.customer_name"
+          }, {
+            "alias" : "phone_number",
+            "expression" : "bronze_customers.phone_number"
+          }, {
+            "alias" : "street_number",
+            "expression" : "bronze_customers.street_number"
+          }, {
+            "alias" : "street_name",
+            "expression" : "bronze_customers.street_name"
+          }, {
+            "alias" : "unit",
+            "expression" : "bronze_customers.unit"
+          }, {
+            "alias" : "city",
+            "expression" : "bronze_customers.city"
+          }, {
+            "alias" : "state",
+            "expression" : "bronze_customers.state"
+          }, {
+            "alias" : "postcode",
+            "expression" : "bronze_customers.postcode"
+          }, {
+            "alias" : "LAT",
+            "expression" : "bronze_customers.LAT"
+          }, {
+            "alias" : "LON",
+            "expression" : "bronze_customers.LON"
+          }, {
+            "alias" : "sale_date",
+            "expression" : "'bronze-sales'['sale_date']"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "'bronze-sales'['customer_id']"
+          }, {
+            "alias" : "order_id",
+            "expression" : "'bronze-sales'['order_id']"
+          }, {
+            "alias" : "total_price_usd_cents",
+            "expression" : "'bronze-sales'['total_price_usd_cents']"
+          }, {
+            "alias" : "num_products",
+            "expression" : "'bronze-sales'['num_products']"
+          }, {
+            "alias" : "products",
+            "expression" : "'bronze-sales'['products']"
+          } ],
+          "headAlias" : "datasets/bronze-customers"
+        }
+      } ]
+    } ],
+    "pipelineSettingsInfo" : {
+      "isNullValuesInUnitTestsEnabled" : true
+    },
+    "language" : "python",
+    "fabricId" : "33407",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "prophecyteam.labsamples.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions", "prophecy.streaming.functions", "prophecyteam.prophecyanalyticalfunctionspython.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "bronze",
+          "kind" : {
+            "type" : "string",
+            "value" : "bronze"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12656",
+      "projectName" : "ProphecyStreamingPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "16362",
+      "projectName" : "ProphecyAnalyticalFunctionsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "sol_module_6",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "5b89NL3oEpXtX-jAn9fOS$$QiGKh9olzq_03J-5n5J0j",
+    "source" : "NJcJuKYc1UoFzgoolhhbw$$SMRq7JYbHkwF_H7z8qAVK",
+    "sourcePort" : "l9KIaZUam7M3dM-NG62z-$$lzcIlOgvBGkH5pMSZPej4",
+    "target" : "--P3_ywzpVyemKlYGoib-$$Bn4g9RnVgnhCuBmv_xnWj",
+    "targetPort" : "9VGtGEblioiCD8Q-1t05Z$$rumI2oHCGV61quNmVl3MY"
+  } ],
+  "processes" : {
+    "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19" : {
+      "id" : "C1UeslP3-v0mnovJBp9Qz$$7WcVp3I-NB1fX3lrt7M19",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "bronze-sales",
+        "slug" : "bronze_sales",
+        "x" : -1140,
+        "y" : -280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "quzlArmjuYHkBRcGgmIJz$$pfgwABEDYC3JGu8dBEaau",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/bronze-sales"
+      }
+    },
+    "--P3_ywzpVyemKlYGoib-$$Bn4g9RnVgnhCuBmv_xnWj" : {
+      "id" : "--P3_ywzpVyemKlYGoib-$$Bn4g9RnVgnhCuBmv_xnWj",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_current",
+        "slug" : "filter_current",
+        "x" : -960,
+        "y" : -500,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9VGtGEblioiCD8Q-1t05Z$$rumI2oHCGV61quNmVl3MY",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "signup_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "valid_from",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "valid_to",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "is_original",
+              "type" : "boolean",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "is_current",
+              "type" : "boolean",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "postcode",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LAT",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LON",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "xkpfTGyMuazteLb0s-LFs$$Te0nw4MVircjpYeziycKK",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "9VGtGEblioiCD8Q-1t05Z$$rumI2oHCGV61quNmVl3MY##is_current" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "is_current"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "NJcJuKYc1UoFzgoolhhbw$$SMRq7JYbHkwF_H7z8qAVK" : {
+      "id" : "NJcJuKYc1UoFzgoolhhbw$$SMRq7JYbHkwF_H7z8qAVK",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "bronze-customers",
+        "slug" : "bronze_customers",
+        "x" : -1140,
+        "y" : -500,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "l9KIaZUam7M3dM-NG62z-$$lzcIlOgvBGkH5pMSZPej4",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/bronze-customers"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

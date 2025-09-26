@@ -1,0 +1,100 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "33408",
+    "jobId" : "jobs/silver-daily-run",
+    "name" : "silver-daily-run",
+    "schedule" : "0 0 0 * * ? *",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : true,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "pournimaambikar@gmail.com",
+      "onStart" : true,
+      "onSuccess" : true,
+      "onFailure" : true
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      },
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    }
+  },
+  "processes" : {
+    "8nHH6xTc68vTVKHyvDTnX" : {
+      "id" : "8nHH6xTc68vTVKHyvDTnX",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "lab_silver_marketing",
+        "slug" : "lab_silver_marketing",
+        "x" : 100,
+        "y" : 100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "in",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "out",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        },
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/lab_silver_marketing",
+        "configurations" : {
+          "selectedInstance" : "default",
+          "instances" : {
+            "course-template" : [ "default" ]
+          },
+          "overrides" : { },
+          "schema" : [ {
+            "name" : "bronze",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "bronze"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "silver",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "silver"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ]
+        },
+        "projectId" : "57619"
+      }
+    }
+  },
+  "connections" : [ ]
+}

@@ -1,0 +1,230 @@
+{
+  "id" : "Nc9d_WhPJHTGmGlz9qvwa",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "-vzxuIlojmdFAoeQJgUv8",
+      "slug" : "in0",
+      "isStreaming" : false
+    } ],
+    "outputs" : [ {
+      "id" : "wybM6VMNQbsTsrV8IydhT",
+      "slug" : "out0",
+      "isStreaming" : false
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "properties" : {
+    "packageName" : "analytics"
+  },
+  "connections" : [ {
+    "id" : "DegK_aMHr68X7MhusnBIh$$Mn6Ijp4eD9f66sEuIrDHU",
+    "source" : "ZE2TP3Oy_tAcZjZDCqxaZ",
+    "sourcePort" : "cXQzIFYQVS0gwGBT-5X1B",
+    "target" : "SQOcOU_DggK3K9YXu7Sv3",
+    "targetPort" : "-9wxD-Bb9S0NMzBNMk5JI"
+  }, {
+    "id" : "XYWICvlewidqoLAMKKd6D$$oWiGVmfRVNPj2t99qDZwX",
+    "source" : "Nc9d_WhPJHTGmGlz9qvwa",
+    "sourcePort" : "-vzxuIlojmdFAoeQJgUv8",
+    "target" : "ZE2TP3Oy_tAcZjZDCqxaZ",
+    "targetPort" : "4XtGie5rDgogAYFYGHFdi"
+  }, {
+    "id" : "9x224ZCrv807GMvXy7WNM",
+    "source" : "SQOcOU_DggK3K9YXu7Sv3",
+    "sourcePort" : "hWMhMfbXZn9WqHBWKfJl4",
+    "target" : "QbPmveUpc0-gfYtfLOHBD",
+    "targetPort" : "oG_h_5a3MrSePDHuOR2Qh"
+  }, {
+    "id" : "iTiuMeSCssNxvcZxgIvqR",
+    "source" : "QbPmveUpc0-gfYtfLOHBD",
+    "sourcePort" : "iXLSxg_YAW4VIZOvjBIk6",
+    "target" : "Nc9d_WhPJHTGmGlz9qvwa",
+    "targetPort" : "wybM6VMNQbsTsrV8IydhT"
+  } ],
+  "processes" : {
+    "ZE2TP3Oy_tAcZjZDCqxaZ" : {
+      "id" : "ZE2TP3Oy_tAcZjZDCqxaZ",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "OrderBySales",
+        "slug" : "OrderBySales",
+        "x" : 180,
+        "y" : -40,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4XtGie5rDgogAYFYGHFdi",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "cXQzIFYQVS0gwGBT-5X1B",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "4XtGie5rDgogAYFYGHFdi$$3e8YfeT8cWxTu5-oCny43##total_sales_usd_cents" ],
+        "orders" : [ {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "total_sales_usd_cents"
+          },
+          "sortType" : "desc"
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/OrderBy",
+        "projectId" : "12654",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.46"
+      }
+    },
+    "SQOcOU_DggK3K9YXu7Sv3" : {
+      "id" : "SQOcOU_DggK3K9YXu7Sv3",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Top10",
+        "slug" : "Top10",
+        "x" : 360,
+        "y" : -40,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-9wxD-Bb9S0NMzBNMk5JI",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "hWMhMfbXZn9WqHBWKfJl4",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "10"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Limit",
+        "projectId" : "12654",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.46"
+      }
+    },
+    "QbPmveUpc0-gfYtfLOHBD" : {
+      "id" : "QbPmveUpc0-gfYtfLOHBD",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "PrettyUSD",
+        "slug" : "PrettyUSD",
+        "x" : 680,
+        "y" : -80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "oG_h_5a3MrSePDHuOR2Qh",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "iXLSxg_YAW4VIZOvjBIk6",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "sql",
+        "importString" : "",
+        "transformations" : [ {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "total_sales_usd",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "concat('$', cast(cast(total_sales_usd_cents / 100  as decimal(32,2)) as string))"
+            }
+          }
+        }, {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : "total_sales_usd_cents"
+          },
+          "kind" : "DropColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "",
+            "expression" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          }
+        } ],
+        "activeTab" : "transformations",
+        "columnsSelector" : [ "oG_h_5a3MrSePDHuOR2Qh$$EIwEtvNEbNa0-UYeabvkQ##total_sales_usd_cents" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
+        "projectId" : "12654",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.2.46"
+      }
+    }
+  }
+}

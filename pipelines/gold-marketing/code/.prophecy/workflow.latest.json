@@ -1,0 +1,1208 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.10.0",
+        "pyPiVersion" : "1.9.49"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/gold-marketing",
+    "pipelineSettingsInfo" : {
+      "isNullValuesInUnitTestsEnabled" : true
+    },
+    "language" : "python",
+    "fabricId" : "33407",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "prophecyteam.labsamples.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions", "prophecy.streaming.functions", "prophecyteam.prophecyanalyticalfunctionspython.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "bronze",
+          "kind" : {
+            "type" : "string",
+            "value" : "bronze"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "silver",
+          "kind" : {
+            "type" : "string",
+            "value" : "silver"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "gold",
+          "kind" : {
+            "type" : "string",
+            "value" : "gold"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12656",
+      "projectName" : "ProphecyStreamingPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "16362",
+      "projectName" : "ProphecyAnalyticalFunctionsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "goldmarketing",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "XfvynQskVCt_icbdl8Njh$$TRzb09CJ7fT3SqZPKEdES",
+    "source" : "otHsCsiFQRbjKgkg9Ao4m$$xea_3xOTD-Qqk6ytrQq1u",
+    "sourcePort" : "xZOCLzO1FZxXPoMU_x0i1$$OIr0Gl3PVz4MYvDkvPlmp",
+    "target" : "3Vtc7lRYYueGGBbHpsGmh$$c1Wj_zi9ZxeTTOROwKJY8",
+    "targetPort" : "Jq6cy_G-QwzAybJJ4NyyU$$szmar7w3fltYlrJhasPnU"
+  }, {
+    "id" : "XAGFB_ibrTierdHS13dHR$$mg-A_RGc8xQo9DO43Nnho",
+    "source" : "o2o2o-uIUpEGRDaHKU5U9$$lo4SQ5qkaNFe27KP3NvbZ",
+    "sourcePort" : "X_ifPCpKe38GsgwwfXLwP$$szpKRhm0KHjCKicMj0ls1",
+    "target" : "3Vtc7lRYYueGGBbHpsGmh$$c1Wj_zi9ZxeTTOROwKJY8",
+    "targetPort" : "NSNKghK0E0NQHwQR6Bah7$$Up0gg6PWymzCAAOp8cGvA"
+  }, {
+    "id" : "qut86QrgsRv2Mtdjvo9WU",
+    "source" : "3Vtc7lRYYueGGBbHpsGmh$$c1Wj_zi9ZxeTTOROwKJY8",
+    "sourcePort" : "81zGKITUl8dKaq7_XN-zS$$296YjmYMdxeLmlbaknZTZ",
+    "target" : "AGksTKdkyQu753AQm9lDc$$ewR1nlKTNZpO21FagjWr7",
+    "targetPort" : "RuUn15J0_aOqoDADYgHFa$$He61k08flVYR_UuF9wCF6"
+  }, {
+    "id" : "psmo1CAi4OdObH2pIz6ix",
+    "source" : "b_we0Tr2csXAuESGPxx1t$$RMFc_b_YIxnn7-ug3MWYB",
+    "sourcePort" : "S7hVV-zzQzmuXRtWh388t$$pJ7X3qM2tH_GMP4MXmoCy",
+    "target" : "XSKxZBQ7x2mLKjolPVneZ$$B5oCFW-o6zkzXj6RpL9YL",
+    "targetPort" : "-cAIpDm2ZGW9PJzOJLwOt$$h2JURbzeQdfNhEAn9N-Ob"
+  }, {
+    "id" : "w901bxv8zOXZqD4ZFofta",
+    "source" : "b_we0Tr2csXAuESGPxx1t$$RMFc_b_YIxnn7-ug3MWYB",
+    "sourcePort" : "S7hVV-zzQzmuXRtWh388t$$pJ7X3qM2tH_GMP4MXmoCy",
+    "target" : "znCyM5AUwzQhBD-_6vvLf$$hlEtH0KbObGUfXHkUWXzB",
+    "targetPort" : "kdudP1KBYlQ-EwKApMR7t$$kW8IcgFo08JM0esVSsZnv"
+  }, {
+    "id" : "3CL8IRiqnWd5bwiYp1c4g",
+    "source" : "3Vtc7lRYYueGGBbHpsGmh$$c1Wj_zi9ZxeTTOROwKJY8",
+    "sourcePort" : "81zGKITUl8dKaq7_XN-zS$$296YjmYMdxeLmlbaknZTZ",
+    "target" : "6ia1XXDlGOpWEvh0Die-8$$_Q0QdCmVbNOIUEzjnI36D",
+    "targetPort" : "tPErgKOCZ4JUohl1NdCwG$$D4WMl7DxqSk_yd3TOsm5F"
+  }, {
+    "id" : "mlLO9fXVjIEdgJ04qjkU8$$vtDFZRObdlpTjDE8NLC2W",
+    "source" : "6ia1XXDlGOpWEvh0Die-8$$_Q0QdCmVbNOIUEzjnI36D",
+    "sourcePort" : "jyAmVQR6KUc7x6_Jt65U6$$TW7ew7h9VqUs3_5fyMDVL",
+    "target" : "b_we0Tr2csXAuESGPxx1t$$RMFc_b_YIxnn7-ug3MWYB",
+    "targetPort" : "vzTqDSiDfIjCrICzjD5iY$$d9C-U7ZngcldGs3vDIPRu"
+  }, {
+    "id" : "O4Ye8yMsGhMuNri2FclQ7",
+    "source" : "3Vtc7lRYYueGGBbHpsGmh$$c1Wj_zi9ZxeTTOROwKJY8",
+    "sourcePort" : "81zGKITUl8dKaq7_XN-zS$$296YjmYMdxeLmlbaknZTZ",
+    "target" : "Ub0a_86GxaCtQmjFonl0p$$Sio7kyBIOQQodf-2yq4P8",
+    "targetPort" : "YNcilYop9JytjdeEbbxQi$$1tBWJxnZiM-GOEa_InVAf"
+  } ],
+  "processes" : {
+    "3Vtc7lRYYueGGBbHpsGmh$$c1Wj_zi9ZxeTTOROwKJY8" : {
+      "id" : "3Vtc7lRYYueGGBbHpsGmh$$c1Wj_zi9ZxeTTOROwKJY8",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "JoinProductCats",
+        "slug" : "JoinProductCats",
+        "x" : 100,
+        "y" : 200,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Jq6cy_G-QwzAybJJ4NyyU$$szmar7w3fltYlrJhasPnU",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "campaign_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_start",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_end",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_cost_micros_usd",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_micros_usd",
+              "type" : "double",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "NSNKghK0E0NQHwQR6Bah7$$Up0gg6PWymzCAAOp8cGvA",
+          "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "main_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sub_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "date_introduced",
+              "type" : "date",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "price_usd_cents",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "81zGKITUl8dKaq7_XN-zS$$296YjmYMdxeLmlbaknZTZ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.product_id = in1.product_id"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "target" : "campaign_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.campaign_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "campaign_start",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.campaign_start"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "campaign_end",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.campaign_end"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "product_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.product_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "campaign_cost_micros_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.campaign_cost_micros_usd"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "revenue_generated_micros_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.revenue_generated_micros_usd"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "main_category",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.main_category"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "sub_category",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.sub_category"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ],
+        "hints" : [ {
+          "id" : "Jq6cy_G-QwzAybJJ4NyyU$$szmar7w3fltYlrJhasPnU",
+          "alias" : "in0",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "NSNKghK0E0NQHwQR6Bah7$$Up0gg6PWymzCAAOp8cGvA",
+          "alias" : "in1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "allIn1" : null,
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "NSNKghK0E0NQHwQR6Bah7$$Up0gg6PWymzCAAOp8cGvA##product_id", "Jq6cy_G-QwzAybJJ4NyyU$$szmar7w3fltYlrJhasPnU##product_id", "Jq6cy_G-QwzAybJJ4NyyU$$szmar7w3fltYlrJhasPnU##campaign_id", "Jq6cy_G-QwzAybJJ4NyyU$$szmar7w3fltYlrJhasPnU##campaign_cost_micros_usd", "Jq6cy_G-QwzAybJJ4NyyU$$szmar7w3fltYlrJhasPnU##product_id", "Jq6cy_G-QwzAybJJ4NyyU$$szmar7w3fltYlrJhasPnU##campaign_start", "NSNKghK0E0NQHwQR6Bah7$$Up0gg6PWymzCAAOp8cGvA##main_category", "Jq6cy_G-QwzAybJJ4NyyU$$szmar7w3fltYlrJhasPnU##campaign_end", "Jq6cy_G-QwzAybJJ4NyyU$$szmar7w3fltYlrJhasPnU##revenue_generated_micros_usd", "NSNKghK0E0NQHwQR6Bah7$$Up0gg6PWymzCAAOp8cGvA##sub_category" ],
+        "allIn0" : null,
+        "whereClause" : null,
+        "headAlias" : "in0"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Join",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "AGksTKdkyQu753AQm9lDc$$ewR1nlKTNZpO21FagjWr7" : {
+      "id" : "AGksTKdkyQu753AQm9lDc$$ewR1nlKTNZpO21FagjWr7",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "LosingMoney",
+        "slug" : "LosingMoney",
+        "x" : 320,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RuUn15J0_aOqoDADYgHFa$$He61k08flVYR_UuF9wCF6",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "campaign_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_start",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_end",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_cost_micros_usd",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_micros_usd",
+              "type" : "double",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "main_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sub_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "9PAev2z8C_Ix72p7qh3Q7$$3ovUscO9cPGzyp4u5V85S",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "RuUn15J0_aOqoDADYgHFa$$He61k08flVYR_UuF9wCF6##revenue_generated_micros_usd", "RuUn15J0_aOqoDADYgHFa$$He61k08flVYR_UuF9wCF6##campaign_cost_micros_usd" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "campaign_cost_micros_usd > revenue_generated_micros_usd"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "XSKxZBQ7x2mLKjolPVneZ$$B5oCFW-o6zkzXj6RpL9YL" : {
+      "id" : "XSKxZBQ7x2mLKjolPVneZ$$B5oCFW-o6zkzXj6RpL9YL",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "Filter_1",
+        "slug" : "Filter_1",
+        "x" : 720,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-cAIpDm2ZGW9PJzOJLwOt$$h2JURbzeQdfNhEAn9N-Ob",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "main_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sub_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_start",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "num_campaigns",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "cost_usd",
+              "type" : "decimal(32,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_usd",
+              "type" : "decimal(32,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_sub_marketing_usd",
+              "type" : "decimal(32,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "Rg1kRUyzq6DrHQelnT0lC$$Bhjpk1Wbtnr5lJ9GWtpFe",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "-cAIpDm2ZGW9PJzOJLwOt$$h2JURbzeQdfNhEAn9N-Ob##campaign_start" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "campaign_start is null"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "znCyM5AUwzQhBD-_6vvLf$$hlEtH0KbObGUfXHkUWXzB" : {
+      "id" : "znCyM5AUwzQhBD-_6vvLf$$hlEtH0KbObGUfXHkUWXzB",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "gold-marketing-cube",
+        "slug" : "gold_marketing_cube",
+        "x" : 720,
+        "y" : 200,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kdudP1KBYlQ-EwKApMR7t$$kW8IcgFo08JM0esVSsZnv",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "main_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sub_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_start",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "num_campaigns",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "cost_usd",
+              "type" : "decimal(32,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_usd",
+              "type" : "decimal(32,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_sub_marketing_usd",
+              "type" : "decimal(32,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/gold-marketing-cube"
+      }
+    },
+    "6ia1XXDlGOpWEvh0Die-8$$_Q0QdCmVbNOIUEzjnI36D" : {
+      "id" : "6ia1XXDlGOpWEvh0Die-8$$_Q0QdCmVbNOIUEzjnI36D",
+      "component" : "GroupByRollup",
+      "metadata" : {
+        "label" : "GroupByRollup_1",
+        "slug" : "GroupByRollup_1",
+        "x" : 340,
+        "y" : 200,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tPErgKOCZ4JUohl1NdCwG$$D4WMl7DxqSk_yd3TOsm5F",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "campaign_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_start",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_end",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_cost_micros_usd",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_micros_usd",
+              "type" : "double",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "main_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sub_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "jyAmVQR6KUc7x6_Jt65U6$$TW7ew7h9VqUs3_5fyMDVL",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "allIns" : false,
+        "aggregate" : [ {
+          "target" : "num_campaigns",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "count(1)"
+          },
+          "description" : "",
+          "_row_id" : "c_61"
+        }, {
+          "target" : "campaign_cost_micros_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "sum(campaign_cost_micros_usd)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "revenue_generated_micros_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "sum(revenue_generated_micros_usd)"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ],
+        "allowSelection" : true,
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "rollup" : [ {
+          "target" : "main_category",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "main_category"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "sub_category",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "sub_category"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "campaign_start",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "campaign_start"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=https://github.com/prophecy-samples/spark-analytical-functions-python&subPath=/&tag=ProphecyAnalyticalFunctionsPython/3.0.0&projectSubscriptionProjectId=16362&path=gems/GroupByRollup",
+        "projectName" : "ProphecyAnalyticalFunctionsPython"
+      }
+    },
+    "o2o2o-uIUpEGRDaHKU5U9$$lo4SQ5qkaNFe27KP3NvbZ" : {
+      "id" : "o2o2o-uIUpEGRDaHKU5U9$$lo4SQ5qkaNFe27KP3NvbZ",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "bronze-products",
+        "slug" : "bronze_products",
+        "x" : -100,
+        "y" : 300,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "X_ifPCpKe38GsgwwfXLwP$$szpKRhm0KHjCKicMj0ls1",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/bronze-products"
+      }
+    },
+    "otHsCsiFQRbjKgkg9Ao4m$$xea_3xOTD-Qqk6ytrQq1u" : {
+      "id" : "otHsCsiFQRbjKgkg9Ao4m$$xea_3xOTD-Qqk6ytrQq1u",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "silver-dim-campaign",
+        "slug" : "silver_dim_campaign",
+        "x" : -100,
+        "y" : 100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "xZOCLzO1FZxXPoMU_x0i1$$OIr0Gl3PVz4MYvDkvPlmp",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/silver-dim-campaign"
+      }
+    },
+    "Ub0a_86GxaCtQmjFonl0p$$Sio7kyBIOQQodf-2yq4P8" : {
+      "id" : "Ub0a_86GxaCtQmjFonl0p$$Sio7kyBIOQQodf-2yq4P8",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_1",
+        "slug" : "SQLStatement_1",
+        "x" : 340,
+        "y" : 420,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "YNcilYop9JytjdeEbbxQi$$1tBWJxnZiM-GOEa_InVAf",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "campaign_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_start",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_end",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_cost_micros_usd",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_micros_usd",
+              "type" : "double",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "main_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sub_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "pGKOGBLN24GfNxgpt6J1P$$3FNC4G7Volr_VrY2Va6k6",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "pGKOGBLN24GfNxgpt6J1P$$3FNC4G7Volr_VrY2Va6k6",
+          "language" : "sql",
+          "content" : "SELECT main_category,\n       sub_category,\n       campaign_start,\n       count(*) AS num_campaigns,\n       sum(campaign_cost_micros_usd) AS cost_micros_usd,\n       sum(revenue_generated_micros_usd) AS revenue_generated_micros_usd\nFROM in0\nGROUP BY rollup(main_category, sub_category, campaign_start)"
+        } ],
+        "inputPortNames" : [ "in0" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/SQLStatement",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "b_we0Tr2csXAuESGPxx1t$$RMFc_b_YIxnn7-ug3MWYB" : {
+      "id" : "b_we0Tr2csXAuESGPxx1t$$RMFc_b_YIxnn7-ug3MWYB",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "CleanFields",
+        "slug" : "CleanFields",
+        "x" : 520,
+        "y" : 200,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vzTqDSiDfIjCrICzjD5iY$$d9C-U7ZngcldGs3vDIPRu",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "main_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sub_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_start",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "num_campaigns",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_cost_micros_usd",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_micros_usd",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "S7hVV-zzQzmuXRtWh388t$$pJ7X3qM2tH_GMP4MXmoCy",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "main_category",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "main_category"
+          },
+          "description" : ""
+        }, {
+          "target" : "sub_category",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "sub_category"
+          },
+          "description" : ""
+        }, {
+          "target" : "campaign_start",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "campaign_start"
+          },
+          "description" : ""
+        }, {
+          "target" : "num_campaigns",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "num_campaigns"
+          },
+          "description" : ""
+        }, {
+          "target" : "cost_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "cast(campaign_cost_micros_usd * pow(10,-6) as decimal(32,2))"
+          },
+          "description" : ""
+        }, {
+          "target" : "revenue_generated_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "cast(revenue_generated_micros_usd * pow(10,-6) as decimal(32,2))"
+          },
+          "description" : ""
+        }, {
+          "target" : "revenue_sub_marketing_usd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "cast((revenue_generated_micros_usd - campaign_cost_micros_usd) * pow(10,-6) as decimal(32,2))"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "vzTqDSiDfIjCrICzjD5iY$$d9C-U7ZngcldGs3vDIPRu##campaign_cost_micros_usd", "vzTqDSiDfIjCrICzjD5iY$$d9C-U7ZngcldGs3vDIPRu##sub_category", "vzTqDSiDfIjCrICzjD5iY$$d9C-U7ZngcldGs3vDIPRu##campaign_start", "vzTqDSiDfIjCrICzjD5iY$$d9C-U7ZngcldGs3vDIPRu##main_category", "vzTqDSiDfIjCrICzjD5iY$$d9C-U7ZngcldGs3vDIPRu##revenue_generated_micros_usd", "vzTqDSiDfIjCrICzjD5iY$$d9C-U7ZngcldGs3vDIPRu##num_campaigns" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

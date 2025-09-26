@@ -1,0 +1,2764 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.10.0",
+        "pyPiVersion" : "1.9.49"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/sol_data_quality",
+    "pipelineSettingsInfo" : {
+      "isNullValuesInUnitTestsEnabled" : true
+    },
+    "language" : "python",
+    "fabricId" : "33407",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "prophecyteam.labsamples.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions", "prophecy.streaming.functions", "prophecyteam.prophecyanalyticalfunctionspython.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "CustomersEarly",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "source_path",
+              "kind" : {
+                "type" : "string",
+                "value" : "dbfs:/course_lab/rainforest_raw_data"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "dt",
+              "kind" : {
+                "type" : "string",
+                "value" : "2023-06-01"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true,
+          "isReferenced" : false
+        }, {
+          "name" : "CustomersLater",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "source_path",
+              "kind" : {
+                "type" : "string",
+                "value" : "dbfs:/course_lab/rainforest_raw_data"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "dt",
+              "kind" : {
+                "type" : "string",
+                "value" : "2023-07-02"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true,
+          "isReferenced" : false
+        }, {
+          "name" : "bronze",
+          "kind" : {
+            "type" : "string",
+            "value" : "bronze"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "silver",
+          "kind" : {
+            "type" : "string",
+            "value" : "silver"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "gold",
+          "kind" : {
+            "type" : "string",
+            "value" : "gold"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12656",
+      "projectName" : "ProphecyStreamingPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "16362",
+      "projectName" : "ProphecyAnalyticalFunctionsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "dataquality",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "Dih6Lmbpj1JdyqTUkXYgu",
+    "source" : "FFCdJFxsNPhs-NAY89Bmf$$-ZGHGCuRFzplmZbi7gGhg",
+    "sourcePort" : "ofAPeElqu1HoXBZecwYks$$tYbeWoUtPs3RkDEy5PAVh",
+    "target" : "UFZ27aIc0F7DJlRQRaCKB$$hZpmqyG09vvnF8zQ_GDfa",
+    "targetPort" : "PrpJgQG7Uoao520OrxlFq$$UAl6uTR1Y9R-aVSCR0NJb"
+  }, {
+    "id" : "7hlBAd90JHqD7-cct4iuh",
+    "source" : "ShERhW56p5CqiHkO53QG_$$FKkYc9LuGUJJHHF5WQXbi",
+    "sourcePort" : "9AQLIBfP1Qt9Usb1xUFP-$$1om8uaPo7f5r6cKsh0OJf",
+    "target" : "jaAJ78V4FYg6J0hm8cAh8$$4Jwgy2IQc91cjl73OFPlV",
+    "targetPort" : "7FgqEokIn1oEIzVyTEYe1$$ZjrNCrclEEj2_yZO8YWK3"
+  }, {
+    "id" : "raCJzLQ-SnwGCP5fw-5qg",
+    "source" : "UFZ27aIc0F7DJlRQRaCKB$$hZpmqyG09vvnF8zQ_GDfa",
+    "sourcePort" : "G7FzryuS1rKLvSkCkZBU9$$oJc0QZiPC42k30_LW66zq",
+    "target" : "CgO1t1VQ5OsDxp7eLcH_-$$VEsnqrOzWwdnm7m4M-2MO",
+    "targetPort" : "NgdoHSGu8SRt-l4T0uOWA$$eh6dVfC1B1qufFB7XOtTe"
+  }, {
+    "id" : "ixAuUSXICeKeWsMH22vBn",
+    "source" : "jaAJ78V4FYg6J0hm8cAh8$$4Jwgy2IQc91cjl73OFPlV",
+    "sourcePort" : "sradpVemZp-Kd45hTUhJh$$rgV6NDNlKDSHiYX63_Lyk",
+    "target" : "CgO1t1VQ5OsDxp7eLcH_-$$VEsnqrOzWwdnm7m4M-2MO",
+    "targetPort" : "8inL90FKUocAhjqEVIiMv$$dK_ncr1zPc6cTdRtAmra5"
+  }, {
+    "id" : "-C_2MnGnIsmBGeyWABoFh",
+    "source" : "CgO1t1VQ5OsDxp7eLcH_-$$VEsnqrOzWwdnm7m4M-2MO",
+    "sourcePort" : "StO3dVy1Rlc4KrstfCrUx$$AtMBbLWXhMG8xQUNS1-pP",
+    "target" : "wOA6RCOtoOtDXntkFB2QX$$-qD0ZwNtZMX1Z1BSj342s",
+    "targetPort" : "g1GQZTTnJVWpyDqVyg0vl$$5DXpO05avDuCuW5xx15mp"
+  }, {
+    "id" : "9AE_dEly7TMiNnCYVPdVP",
+    "source" : "99Q-1ecqc7ZWyoByIQHtO$$3ylrQmpq-g3Den0BrmDcv",
+    "sourcePort" : "T05N1L8wkfMF7za0TI_nD$$iOZahQ8mnszlv75hLdSdr",
+    "target" : "Wl1fDkV3jg_Y9ZFImyLmE$$LnCcHrTgzLxZRzh7pPK0K",
+    "targetPort" : "4vNcp2MtklyLhCk8em6S8$$MAGBBiPPSB6PVrLRIMMku"
+  }, {
+    "id" : "q7HpWHx6KQ3FHkW4dSRWf$$vmkvxTkPUonm0r27gJKhQ",
+    "source" : "Wl1fDkV3jg_Y9ZFImyLmE$$LnCcHrTgzLxZRzh7pPK0K",
+    "sourcePort" : "3Sb1zjcKO81VJrmCpoMob$$oRhxJZxvwsOLpHwSr-8CJ",
+    "target" : "mbiSwzSXTQdfDFOPI1n3Z$$FLNNlNK3NG80Zovb2qSnk",
+    "targetPort" : "RYe7wVkA2viGyDIWq6uLF$$p4_l5XjPRMDYvJLK9Lyxz"
+  }, {
+    "id" : "5hIjUkv6416WjB-L7joEk$$Vy5fGL5VK3HQMLkiCPRgL",
+    "source" : "mbiSwzSXTQdfDFOPI1n3Z$$FLNNlNK3NG80Zovb2qSnk",
+    "sourcePort" : "kNwXq2F3WzZVJuzFDXISw$$ua2xwuDOMFnpU_bGRPOPi",
+    "target" : "R2GcrwCGGrXvZOIJ4VE2a$$yeftucwVZxBAr-yealedZ",
+    "targetPort" : "OnadKWFklhtx0pO9BUjrm$$orhdJfvWiyTX2PvIxMs6X"
+  }, {
+    "id" : "-8QCfpgsFWTAwscn7VGN-$$PXkyxhUHE8UHr7Cx5Wd0C",
+    "source" : "GwrdbSw8pCDfNUu_3mxVi$$Poxgc_QP49Hgqgct03xof",
+    "sourcePort" : "HSnfyS9xksnpo_8LJCZB8$$wEc131u8C4iwtx973ZZLV",
+    "target" : "cMeCglWvUkCe6lXCklmfO$$hPEldKY-CdGJfb9MSAwyX",
+    "targetPort" : "nD6r8SX_g64a1kHELHt-q$$RDRmRJB2RYRH-sEejCA55"
+  }, {
+    "id" : "cctKrWlgb3NXJtzkopyMq",
+    "source" : "99Q-1ecqc7ZWyoByIQHtO$$3ylrQmpq-g3Den0BrmDcv",
+    "sourcePort" : "T05N1L8wkfMF7za0TI_nD$$iOZahQ8mnszlv75hLdSdr",
+    "target" : "cMeCglWvUkCe6lXCklmfO$$hPEldKY-CdGJfb9MSAwyX",
+    "targetPort" : "xQsJ9f7bh-RARojOvTIMZ$$5Muczj7LA7-7IRn-L_lie"
+  }, {
+    "id" : "mrBkIMtMH1EOMaygymzeq$$3rJiNi50w7nw4SrRiZHv1",
+    "source" : "cMeCglWvUkCe6lXCklmfO$$hPEldKY-CdGJfb9MSAwyX",
+    "sourcePort" : "feI3qEVjehhgfoZoXeR2Q$$o5h3me9cpscWNjl1Qxi7Q",
+    "target" : "eo_yHsSwpFHXFj57ocUFg$$vQd0AaMZH4Mz9FnT9EZWk",
+    "targetPort" : "jNq7_1sSNYLyxLQUsi2eo$$OmJaAgvWFerXxkkdC8yNs"
+  }, {
+    "id" : "-y_aw06DRmzDIi_pWEuhO$$KHdZFLnfeDw3Eoc8l5YPQ",
+    "source" : "eo_yHsSwpFHXFj57ocUFg$$vQd0AaMZH4Mz9FnT9EZWk",
+    "sourcePort" : "ybvWHJF0HHw__M0Pzpn5A$$jwpsb6xtKUYU5JD_KlYBb",
+    "target" : "djRsZRzFDnyysQrT5xg3Y$$KfE-zaBgPur1jCufAllsj",
+    "targetPort" : "ZByEpji3EoNgP2tbwyhWg$$T4ux5KKMk2J8_UCygRE-T"
+  }, {
+    "id" : "y4tpDG--5CsbHCn4NLwsR$$5pAhlrleXtemdJPUbZKnH",
+    "source" : "djRsZRzFDnyysQrT5xg3Y$$KfE-zaBgPur1jCufAllsj",
+    "sourcePort" : "Up5yKhd2AtIdPLjAwJ2p3$$xsssrS4RC947Vr1eh0C_5",
+    "target" : "gBT6y5ucHfX_nHSuYrML-$$2CmJg_xCOX48fIfQEQ6-O",
+    "targetPort" : "atgHpbTr9BJLG4GL09eeK$$LHqUp9v8-bBieG7u-GDK5"
+  }, {
+    "id" : "qDyxg9Bg7lIgre2V0-sJa$$SXBGTmayvEs7ruaJh1lim",
+    "source" : "R2GcrwCGGrXvZOIJ4VE2a$$yeftucwVZxBAr-yealedZ",
+    "sourcePort" : "wLW-y1AbWhpn5HvLfAB2c$$67IpgNRllBv-FC8qusUmY",
+    "target" : "gBT6y5ucHfX_nHSuYrML-$$2CmJg_xCOX48fIfQEQ6-O",
+    "targetPort" : "jXJY1KLRthrcqxEcLc_eT$$AM4QXmwVpwytrSOacJ2Vu"
+  }, {
+    "id" : "2VJv89Anl1m3CGk-t4W1x",
+    "source" : "wOA6RCOtoOtDXntkFB2QX$$-qD0ZwNtZMX1Z1BSj342s",
+    "sourcePort" : "DEBaZeS4K5rFyT7GV0w0u$$L64P7zJyQ7WXdUWhweAg7",
+    "target" : "tSWQtExCVBhEIU_dTeSUZ$$gYdPE6slS_q3UovsGKMpl",
+    "targetPort" : "Z27IT9vhLpf1wVsIJfr4N$$IdNLOkMdCcKBQYPirKq_X"
+  }, {
+    "id" : "1WlpcS7D6r75QbwnlMzOs",
+    "source" : "tSWQtExCVBhEIU_dTeSUZ$$gYdPE6slS_q3UovsGKMpl",
+    "sourcePort" : "FSOPfsGcMDgVe6QPAWqGH$$vZ2EsrkgJty8cmJ1cxMTj",
+    "target" : "gBT6y5ucHfX_nHSuYrML-$$2CmJg_xCOX48fIfQEQ6-O",
+    "targetPort" : "Jz2hHA7ZtNZ-kChP_yiQs$$LkBP-X3No0llJzqODx2b4"
+  }, {
+    "id" : "VWrj_tXaN_A9NN9Wl5buv$$e5KMapGi9SL5KWIHoKxot",
+    "source" : "gBT6y5ucHfX_nHSuYrML-$$2CmJg_xCOX48fIfQEQ6-O",
+    "sourcePort" : "jUYa8x5LPj4w83TOXgqzz$$cSvUNkxiyNbUxKR6ttxJ9",
+    "target" : "chUHD9ntMOF5weJqUOosz$$Y2Lm5c9mAO2bQaEGE7nTh",
+    "targetPort" : "fj6CguHiANiXwS6SAptLo$$jm_Lizy_H25gV82J0fsQI"
+  }, {
+    "id" : "o96QS7309zje17421NIF6",
+    "source" : "gBT6y5ucHfX_nHSuYrML-$$2CmJg_xCOX48fIfQEQ6-O",
+    "sourcePort" : "jUYa8x5LPj4w83TOXgqzz$$cSvUNkxiyNbUxKR6ttxJ9",
+    "target" : "f9Ge5nXLtg1yEkMkokJmV$$fEu8sJpLhkP5eyFtnGC88",
+    "targetPort" : "v0YqFoifG_ZeiohJp2feN$$jNPo3wiEh7JEbJ22udb__"
+  }, {
+    "id" : "5u4VZ8-FRqEaoZxZdiyH0$$l76dWbKXoFOJ0mmf4e6GF",
+    "source" : "f9Ge5nXLtg1yEkMkokJmV$$fEu8sJpLhkP5eyFtnGC88",
+    "sourcePort" : "_1NcxbBGwBNmLz7SZimvq$$cf8G7J9Sz4lHH0yUzANJp",
+    "target" : "9M-_1XFI70yzhhwvjt_Ox$$N2hFRqgMsmxRrRCYxtWbH",
+    "targetPort" : "o5DjfOpILKnqEBEXkafDU$$AGPGk-xP2sIMlgTuJR6FS"
+  }, {
+    "id" : "nb3OgbfBNUjyVYI4YpExq$$0gR4Ig79Ie3iR93MdrNVQ",
+    "source" : "chUHD9ntMOF5weJqUOosz$$Y2Lm5c9mAO2bQaEGE7nTh",
+    "sourcePort" : "QtfuKmNyBqQTAyf_aFEoH$$_k5kW4Xx2f1H5yLb5hONZ",
+    "target" : "afNIzJ1LzEhQovaymziT_$$Wxs7rRwkHFXGNPOMPIP9W",
+    "targetPort" : "m_s4iGGMViyFEHxH9eyXt$$WrYCfFhPUA5wn5IMRyR3D"
+  }, {
+    "id" : "TRUJDOAD-6t0lN4qGqg52$$eLr0hjrz193E2K0uzqWRm",
+    "source" : "0l3mwe5T-petOZ-hFXOC9$$3gUixdf-dDiptGJ35unTe",
+    "sourcePort" : "27GIKAWmzhT9M6Q7QhOPc$$ov3cyiA4o1lisTp0TeLie",
+    "target" : "Rb-kQtsVcrOpnoBBGTB_f$$sLIBda5odRNosmXnqLI5b",
+    "targetPort" : "Fly31eUASYNsD1xpJKkSb$$000QBE3P7auu9DIMYNGE7"
+  }, {
+    "id" : "CpRt8QFAuP_Vw6FtOGQQ9$$dErhEa28_chfJ9h18Xqzu",
+    "source" : "Rb-kQtsVcrOpnoBBGTB_f$$sLIBda5odRNosmXnqLI5b",
+    "sourcePort" : "I_oR2GFVjSqsy30d7pHBv$$oYPxOpOSCrB_WrviWT-MD",
+    "target" : "rMx8SnLfTqbS-3jgVnwLo$$HpdtA2OoeM1BfZGLijmNZ",
+    "targetPort" : "O2paywCR5ySAGqHi2eWCu$$MAjfwiPqrgjPkh5fXJpJ9"
+  }, {
+    "id" : "YvwLCcAZTmjmppwG-39FZ$$0nX-9zg9YihgeIEuo09UZ",
+    "source" : "rMx8SnLfTqbS-3jgVnwLo$$HpdtA2OoeM1BfZGLijmNZ",
+    "sourcePort" : "IkP2MUe4VtHCTUfCnDgoo$$kUSTOlyLREpKFMu-gi4oc",
+    "target" : "HcuzkqUuFeBQvaksyTisv$$wwNMnfoZONIronhOPePxn",
+    "targetPort" : "KTI7DSMI8Izag6lFj8ivb$$k77hK_GE6ekRPDqUYMieg"
+  }, {
+    "id" : "keh8kloarl8QuvoQhI56G",
+    "source" : "HcuzkqUuFeBQvaksyTisv$$wwNMnfoZONIronhOPePxn",
+    "sourcePort" : "oPnMLbftCEW1O11RAjRcr$$K8srMra3WMokIfV0Sqt0D",
+    "target" : "gBT6y5ucHfX_nHSuYrML-$$2CmJg_xCOX48fIfQEQ6-O",
+    "targetPort" : "CiWSkOOXm7PymqJo2PuaA$$BTtzs_4uiKlSA2rB3jmME"
+  } ],
+  "processes" : {
+    "Wl1fDkV3jg_Y9ZFImyLmE$$LnCcHrTgzLxZRzh7pPK0K" : {
+      "id" : "Wl1fDkV3jg_Y9ZFImyLmE$$LnCcHrTgzLxZRzh7pPK0K",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "CountFields",
+        "slug" : "CountFields",
+        "x" : -380,
+        "y" : -820,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4vNcp2MtklyLhCk8em6S8$$MAGBBiPPSB6PVrLRIMMku",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "sales_id",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sale_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "price_usd_cents",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "shipping_phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "shipping_full_address",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "shipping_state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "3Sb1zjcKO81VJrmCpoMob$$oRhxJZxvwsOLpHwSr-8CJ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "distinct_sales_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "count(distinct(sales_id))"
+          },
+          "description" : ""
+        }, {
+          "target" : "sales_id_count",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "count(sales_id)"
+          },
+          "description" : ""
+        }, {
+          "target" : "sales_id_null_count",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "sum(if(sales_id is null, 1, 0))"
+          },
+          "description" : ""
+        }, {
+          "target" : "customer_id_null_count",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "sum(if(customer_id is null, 1, 0))"
+          },
+          "description" : ""
+        }, {
+          "target" : "product_id_null_count",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "sum(if(product_id is null, 1, 0))"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "4vNcp2MtklyLhCk8em6S8$$MAGBBiPPSB6PVrLRIMMku##customer_id", "4vNcp2MtklyLhCk8em6S8$$MAGBBiPPSB6PVrLRIMMku##sales_id", "4vNcp2MtklyLhCk8em6S8$$MAGBBiPPSB6PVrLRIMMku##product_id" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "Rb-kQtsVcrOpnoBBGTB_f$$sLIBda5odRNosmXnqLI5b" : {
+      "id" : "Rb-kQtsVcrOpnoBBGTB_f$$sLIBda5odRNosmXnqLI5b",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "CountCampaignFields",
+        "slug" : "CountCampaignFields",
+        "x" : -380,
+        "y" : -100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Fly31eUASYNsD1xpJKkSb$$000QBE3P7auu9DIMYNGE7",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "campaign_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_start",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_end",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_cost_micros_usd",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "revenue_generated_micros_usd",
+              "type" : "double",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "I_oR2GFVjSqsy30d7pHBv$$oYPxOpOSCrB_WrviWT-MD",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "distinct_campaign_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "count(distinct(campaign_id))"
+          },
+          "description" : ""
+        }, {
+          "target" : "campaign_id_count",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "count(campaign_id)"
+          },
+          "description" : ""
+        }, {
+          "target" : "product_id_null_count",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "sum(if(product_id is null, 1, 0))"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "Fly31eUASYNsD1xpJKkSb$$000QBE3P7auu9DIMYNGE7##campaign_id" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "f9Ge5nXLtg1yEkMkokJmV$$fEu8sJpLhkP5eyFtnGC88" : {
+      "id" : "f9Ge5nXLtg1yEkMkokJmV$$fEu8sJpLhkP5eyFtnGC88",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "FilterErrors",
+        "slug" : "FilterErrors",
+        "x" : 440,
+        "y" : -820,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "v0YqFoifG_ZeiohJp2feN$$jNPo3wiEh7JEbJ22udb__",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "is_error",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "error_message",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "_1NcxbBGwBNmLz7SZimvq$$cf8G7J9Sz4lHH0yUzANJp",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "v0YqFoifG_ZeiohJp2feN$$jNPo3wiEh7JEbJ22udb__##is_error" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "is_error"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "FFCdJFxsNPhs-NAY89Bmf$$-ZGHGCuRFzplmZbi7gGhg" : {
+      "id" : "FFCdJFxsNPhs-NAY89Bmf$$-ZGHGCuRFzplmZbi7gGhg",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "CustomersEarly",
+        "slug" : "CustomersEarly",
+        "x" : -800,
+        "y" : -440,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ofAPeElqu1HoXBZecwYks$$tYbeWoUtPs3RkDEy5PAVh",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "5sBeJ23glNiCwDKJOXZXV",
+        "source" : "ohx_1y5miJrpotlIurpR0$$H-E7OJpclV_ZDgYYkhq53",
+        "sourcePort" : "ei6PuJUhoMfJ68RVCZ_TM$$xP0dXZo_heeK69GbADSL9",
+        "target" : "FFCdJFxsNPhs-NAY89Bmf$$-ZGHGCuRFzplmZbi7gGhg",
+        "targetPort" : "ofAPeElqu1HoXBZecwYks$$tYbeWoUtPs3RkDEy5PAVh"
+      } ],
+      "processes" : {
+        "ohx_1y5miJrpotlIurpR0$$H-E7OJpclV_ZDgYYkhq53" : {
+          "id" : "ohx_1y5miJrpotlIurpR0$$H-E7OJpclV_ZDgYYkhq53",
+          "component" : "Source",
+          "metadata" : {
+            "label" : "raw-customer-snapshot_1",
+            "slug" : "raw_customer_snapshot_1",
+            "x" : -60,
+            "y" : -80,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ ],
+            "outputs" : [ {
+              "id" : "ei6PuJUhoMfJ68RVCZ_TM$$xP0dXZo_heeK69GbADSL9",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "datasetId" : "datasets/raw-customer-snapshot"
+          }
+        }
+      }
+    },
+    "9M-_1XFI70yzhhwvjt_Ox$$N2hFRqgMsmxRrRCYxtWbH" : {
+      "id" : "9M-_1XFI70yzhhwvjt_Ox$$N2hFRqgMsmxRrRCYxtWbH",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Assert",
+        "slug" : "Assert",
+        "x" : 620,
+        "y" : -820,
+        "phase" : 10,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "o5DjfOpILKnqEBEXkafDU$$AGPGk-xP2sIMlgTuJR6FS",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "is_error",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "error_message",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
+      },
+      "properties" : {
+        "script" : "error_coumt = in0.count()\nassert error_coumt == 0, f\"{error_coumt} data errors detected\"",
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> None:",
+        "scriptMethodFooter" : "    return "
+      }
+    },
+    "djRsZRzFDnyysQrT5xg3Y$$KfE-zaBgPur1jCufAllsj" : {
+      "id" : "djRsZRzFDnyysQrT5xg3Y$$KfE-zaBgPur1jCufAllsj",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "FormatCustomerIdError",
+        "slug" : "FormatCustomerIdError",
+        "x" : 0,
+        "y" : -640,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ZByEpji3EoNgP2tbwyhWg$$T4ux5KKMk2J8_UCygRE-T",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "missing_customer_id_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "Up5yKhd2AtIdPLjAwJ2p3$$xsssrS4RC947Vr1eh0C_5",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "is_error",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "missing_customer_id_count > 0"
+          },
+          "description" : ""
+        }, {
+          "target" : "error_message",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "'there are customer_ids in sales table not found in customer table'"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "ZByEpji3EoNgP2tbwyhWg$$T4ux5KKMk2J8_UCygRE-T##missing_customer_id_count" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "99Q-1ecqc7ZWyoByIQHtO$$3ylrQmpq-g3Den0BrmDcv" : {
+      "id" : "99Q-1ecqc7ZWyoByIQHtO$$3ylrQmpq-g3Den0BrmDcv",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "silver-fct-sales",
+        "slug" : "silver_fct_sales",
+        "x" : -640,
+        "y" : -820,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "T05N1L8wkfMF7za0TI_nD$$iOZahQ8mnszlv75hLdSdr",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/silver-fct-sales"
+      }
+    },
+    "mbiSwzSXTQdfDFOPI1n3Z$$FLNNlNK3NG80Zovb2qSnk" : {
+      "id" : "mbiSwzSXTQdfDFOPI1n3Z$$FLNNlNK3NG80Zovb2qSnk",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "FormatErrors",
+        "slug" : "FormatErrors",
+        "x" : -200,
+        "y" : -820,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RYe7wVkA2viGyDIWq6uLF$$p4_l5XjPRMDYvJLK9Lyxz",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "distinct_sales_id",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sales_id_count",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sales_id_null_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_id_null_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id_null_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "kNwXq2F3WzZVJuzFDXISw$$ua2xwuDOMFnpU_bGRPOPi",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "errors",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "explode(array (\n  struct(\n    (distinct_sales_id != sales_id_count) as is_error,\n    'sales_id not distinct' as error_message\n  ),\n  struct(\n    (sales_id_null_count != 0) as is_error,\n    'there are null sales_ids' as error_message\n  ),\n  struct(\n    (customer_id_null_count != 0) as is_error,\n    'there are null customer_ids' as error_message\n  ),\n  struct(\n    (product_id_null_count != 0) as is_error,\n    'there are null product_ids' as error_message\n  )\n))"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "RYe7wVkA2viGyDIWq6uLF$$p4_l5XjPRMDYvJLK9Lyxz##distinct_sales_id", "RYe7wVkA2viGyDIWq6uLF$$p4_l5XjPRMDYvJLK9Lyxz##customer_id_null_count", "RYe7wVkA2viGyDIWq6uLF$$p4_l5XjPRMDYvJLK9Lyxz##product_id_null_count", "RYe7wVkA2viGyDIWq6uLF$$p4_l5XjPRMDYvJLK9Lyxz##sales_id_null_count", "RYe7wVkA2viGyDIWq6uLF$$p4_l5XjPRMDYvJLK9Lyxz##sales_id_count" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "CgO1t1VQ5OsDxp7eLcH_-$$VEsnqrOzWwdnm7m4M-2MO" : {
+      "id" : "CgO1t1VQ5OsDxp7eLcH_-$$VEsnqrOzWwdnm7m4M-2MO",
+      "component" : "CompareColumns",
+      "metadata" : {
+        "label" : "CompareDates",
+        "slug" : "CompareDates",
+        "x" : -360,
+        "y" : -380,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NgdoHSGu8SRt-l4T0uOWA$$eh6dVfC1B1qufFB7XOtTe",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "signup_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "postcode",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lat",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lon",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "8inL90FKUocAhjqEVIiMv$$dK_ncr1zPc6cTdRtAmra5",
+          "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "signup_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "postcode",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lat",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lon",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "StO3dVy1Rlc4KrstfCrUx$$AtMBbLWXhMG8xQUNS1-pP",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnName" : "column_name",
+        "mismatchExampleLeft" : "mismatch_example_left",
+        "idColumns" : [ {
+          "format" : "sql",
+          "expression" : "customer_id"
+        } ],
+        "activeTab" : "id_columns",
+        "columnsSelector" : [ "in0##customer_id", "in1##customer_id" ],
+        "mismatchIdColumnPrefix" : "mismatch_example_",
+        "matchCount" : "match_count",
+        "mismatchCount" : "mismatch_count",
+        "mismatchExampleRight" : "mismatch_example_right"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/CompareColumns",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "wOA6RCOtoOtDXntkFB2QX$$-qD0ZwNtZMX1Z1BSj342s" : {
+      "id" : "wOA6RCOtoOtDXntkFB2QX$$-qD0ZwNtZMX1Z1BSj342s",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "SelectSignupDate",
+        "slug" : "SelectSignupDate",
+        "x" : -200,
+        "y" : -380,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "g1GQZTTnJVWpyDqVyg0vl$$5DXpO05avDuCuW5xx15mp",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "column_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "match_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mismatch_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mismatch_example_left",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mismatch_example_right",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mismatch_example_customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "DEBaZeS4K5rFyT7GV0w0u$$L64P7zJyQ7WXdUWhweAg7",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "g1GQZTTnJVWpyDqVyg0vl$$5DXpO05avDuCuW5xx15mp##column_name" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "column_name = 'signup_date'"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "gBT6y5ucHfX_nHSuYrML-$$2CmJg_xCOX48fIfQEQ6-O" : {
+      "id" : "gBT6y5ucHfX_nHSuYrML-$$2CmJg_xCOX48fIfQEQ6-O",
+      "component" : "SetOperation",
+      "metadata" : {
+        "label" : "UnionErrors",
+        "slug" : "UnionErrors",
+        "x" : 240,
+        "y" : -660,
+        "phase" : 0,
+        "cache" : true,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "jXJY1KLRthrcqxEcLc_eT$$AM4QXmwVpwytrSOacJ2Vu",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "is_error",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "error_message",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "atgHpbTr9BJLG4GL09eeK$$LHqUp9v8-bBieG7u-GDK5",
+          "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "is_error",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "error_message",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "Jz2hHA7ZtNZ-kChP_yiQs$$LkBP-X3No0llJzqODx2b4",
+          "slug" : "in2",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "is_error",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "error_message",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "CiWSkOOXm7PymqJo2PuaA$$BTtzs_4uiKlSA2rB3jmME",
+          "slug" : "in3",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "is_error",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "error_message",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "jUYa8x5LPj4w83TOXgqzz$$cSvUNkxiyNbUxKR6ttxJ9",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "operationType" : "unionAll",
+        "allowMissingColumns" : false
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/SetOperation",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "0l3mwe5T-petOZ-hFXOC9$$3gUixdf-dDiptGJ35unTe" : {
+      "id" : "0l3mwe5T-petOZ-hFXOC9$$3gUixdf-dDiptGJ35unTe",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "silver-dim-campaign",
+        "slug" : "silver_dim_campaign",
+        "x" : -640,
+        "y" : -100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "27GIKAWmzhT9M6Q7QhOPc$$ov3cyiA4o1lisTp0TeLie",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/silver-dim-campaign"
+      }
+    },
+    "afNIzJ1LzEhQovaymziT_$$Wxs7rRwkHFXGNPOMPIP9W" : {
+      "id" : "afNIzJ1LzEhQovaymziT_$$Wxs7rRwkHFXGNPOMPIP9W",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "sales_dq_checks",
+        "slug" : "sales_dq_checks",
+        "x" : 620,
+        "y" : -660,
+        "phase" : -10,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "m_s4iGGMViyFEHxH9eyXt$$WrYCfFhPUA5wn5IMRyR3D",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "checked_at",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "is_error",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "error_message",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/sales_dq_checks"
+      }
+    },
+    "rMx8SnLfTqbS-3jgVnwLo$$HpdtA2OoeM1BfZGLijmNZ" : {
+      "id" : "rMx8SnLfTqbS-3jgVnwLo$$HpdtA2OoeM1BfZGLijmNZ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "FormatErrors_1",
+        "slug" : "FormatErrors_1",
+        "x" : -200,
+        "y" : -100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "O2paywCR5ySAGqHi2eWCu$$MAjfwiPqrgjPkh5fXJpJ9",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "distinct_campaign_id",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "campaign_id_count",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id_null_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "IkP2MUe4VtHCTUfCnDgoo$$kUSTOlyLREpKFMu-gi4oc",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "errors",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "explode(array (\n  struct(\n    (distinct_campaign_id != campaign_id_count) as is_error,\n    'campaign_id not distinct' as error_message\n  ),\n  struct(\n    (product_id_null_count != 0) as is_error,\n    'there are null product_ids in dim_campaign' as error_message\n  )\n))"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "O2paywCR5ySAGqHi2eWCu$$MAjfwiPqrgjPkh5fXJpJ9##campaign_id_count", "O2paywCR5ySAGqHi2eWCu$$MAjfwiPqrgjPkh5fXJpJ9##distinct_campaign_id", "O2paywCR5ySAGqHi2eWCu$$MAjfwiPqrgjPkh5fXJpJ9##product_id_null_count" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "cMeCglWvUkCe6lXCklmfO$$hPEldKY-CdGJfb9MSAwyX" : {
+      "id" : "cMeCglWvUkCe6lXCklmfO$$hPEldKY-CdGJfb9MSAwyX",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "JoinCustomerId",
+        "slug" : "JoinCustomerId",
+        "x" : -380,
+        "y" : -640,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "xQsJ9f7bh-RARojOvTIMZ$$5Muczj7LA7-7IRn-L_lie",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "sales_id",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sale_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "price_usd_cents",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "shipping_phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "shipping_full_address",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "shipping_state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "nD6r8SX_g64a1kHELHt-q$$RDRmRJB2RYRH-sEejCA55",
+          "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "signup_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "valid_from",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "valid_to",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "is_original",
+              "type" : "boolean",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "is_current",
+              "type" : "boolean",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "postcode",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LAT",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LON",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "feI3qEVjehhgfoZoXeR2Q$$o5h3me9cpscWNjl1Qxi7Q",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.customer_id = in1.customer_id"
+          },
+          "joinType" : "left_outer"
+        } ],
+        "expressions" : [ {
+          "target" : "sales_customer_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.customer_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "customer_customer_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.customer_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ],
+        "hints" : [ {
+          "id" : "xQsJ9f7bh-RARojOvTIMZ$$5Muczj7LA7-7IRn-L_lie",
+          "alias" : "in0",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "nD6r8SX_g64a1kHELHt-q$$RDRmRJB2RYRH-sEejCA55",
+          "alias" : "in1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "allIn1" : null,
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "xQsJ9f7bh-RARojOvTIMZ$$5Muczj7LA7-7IRn-L_lie##customer_id", "nD6r8SX_g64a1kHELHt-q$$RDRmRJB2RYRH-sEejCA55##customer_id", "xQsJ9f7bh-RARojOvTIMZ$$5Muczj7LA7-7IRn-L_lie##customer_id", "nD6r8SX_g64a1kHELHt-q$$RDRmRJB2RYRH-sEejCA55##customer_id" ],
+        "allIn0" : null,
+        "whereClause" : null,
+        "headAlias" : "in0"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Join",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "tSWQtExCVBhEIU_dTeSUZ$$gYdPE6slS_q3UovsGKMpl" : {
+      "id" : "tSWQtExCVBhEIU_dTeSUZ$$gYdPE6slS_q3UovsGKMpl",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "FormatSignupError",
+        "slug" : "FormatSignupError",
+        "x" : 0,
+        "y" : -380,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Z27IT9vhLpf1wVsIJfr4N$$IdNLOkMdCcKBQYPirKq_X",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "column_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "match_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mismatch_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mismatch_example_left",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mismatch_example_right",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mismatch_example_customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "FSOPfsGcMDgVe6QPAWqGH$$vZ2EsrkgJty8cmJ1cxMTj",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "is_error",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "mismatch_count > 0"
+          },
+          "description" : ""
+        }, {
+          "target" : "error_message",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "'customer signup_dates are changing for the same customer'"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "Z27IT9vhLpf1wVsIJfr4N$$IdNLOkMdCcKBQYPirKq_X##mismatch_count" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "R2GcrwCGGrXvZOIJ4VE2a$$yeftucwVZxBAr-yealedZ" : {
+      "id" : "R2GcrwCGGrXvZOIJ4VE2a$$yeftucwVZxBAr-yealedZ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Unnest",
+        "slug" : "Unnest",
+        "x" : 0,
+        "y" : -820,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "OnadKWFklhtx0pO9BUjrm$$orhdJfvWiyTX2PvIxMs6X",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "errors",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "is_error",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "error_message",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "wLW-y1AbWhpn5HvLfAB2c$$67IpgNRllBv-FC8qusUmY",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "is_error",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "errors.is_error"
+          },
+          "description" : ""
+        }, {
+          "target" : "error_message",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "errors.error_message"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "OnadKWFklhtx0pO9BUjrm$$orhdJfvWiyTX2PvIxMs6X##errors.error_message", "OnadKWFklhtx0pO9BUjrm$$orhdJfvWiyTX2PvIxMs6X##errors", "OnadKWFklhtx0pO9BUjrm$$orhdJfvWiyTX2PvIxMs6X##errors.is_error" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "ShERhW56p5CqiHkO53QG_$$FKkYc9LuGUJJHHF5WQXbi" : {
+      "id" : "ShERhW56p5CqiHkO53QG_$$FKkYc9LuGUJJHHF5WQXbi",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "CustomersLater",
+        "slug" : "CustomersLater",
+        "x" : -800,
+        "y" : -300,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "9AQLIBfP1Qt9Usb1xUFP-$$1om8uaPo7f5r6cKsh0OJf",
+          "slug" : "out0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "Na7m3-LUODDDfqNRnXqtA",
+        "source" : "AnSF_B2Sotc7zw3qyjlJU$$0YFGPxDfh6AwEsPw7sOpt",
+        "sourcePort" : "yYmkqBdCx0kzoZNJ-hk65$$xvgSrZVJDOX-anouoT2zP",
+        "target" : "ShERhW56p5CqiHkO53QG_$$FKkYc9LuGUJJHHF5WQXbi",
+        "targetPort" : "9AQLIBfP1Qt9Usb1xUFP-$$1om8uaPo7f5r6cKsh0OJf"
+      } ],
+      "processes" : {
+        "AnSF_B2Sotc7zw3qyjlJU$$0YFGPxDfh6AwEsPw7sOpt" : {
+          "id" : "AnSF_B2Sotc7zw3qyjlJU$$0YFGPxDfh6AwEsPw7sOpt",
+          "component" : "Source",
+          "metadata" : {
+            "label" : "raw-customer-snapshot_1_1",
+            "slug" : "raw_customer_snapshot_1_1",
+            "x" : -20,
+            "y" : 100,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ ],
+            "outputs" : [ {
+              "id" : "yYmkqBdCx0kzoZNJ-hk65$$xvgSrZVJDOX-anouoT2zP",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "datasetId" : "datasets/raw-customer-snapshot"
+          }
+        }
+      }
+    },
+    "jaAJ78V4FYg6J0hm8cAh8$$4Jwgy2IQc91cjl73OFPlV" : {
+      "id" : "jaAJ78V4FYg6J0hm8cAh8$$4Jwgy2IQc91cjl73OFPlV",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "SignupFilterLate",
+        "slug" : "SignupFilterLate",
+        "x" : -560,
+        "y" : -300,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "7FgqEokIn1oEIzVyTEYe1$$ZjrNCrclEEj2_yZO8YWK3",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "signup_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "postcode",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lat",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lon",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "sradpVemZp-Kd45hTUhJh$$rgV6NDNlKDSHiYX63_Lyk",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "7FgqEokIn1oEIzVyTEYe1$$ZjrNCrclEEj2_yZO8YWK3##signup_date" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "signup_date < '2023-06-01'"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "GwrdbSw8pCDfNUu_3mxVi$$Poxgc_QP49Hgqgct03xof" : {
+      "id" : "GwrdbSw8pCDfNUu_3mxVi$$Poxgc_QP49Hgqgct03xof",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "bronze-customers",
+        "slug" : "bronze_customers",
+        "x" : -640,
+        "y" : -620,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "HSnfyS9xksnpo_8LJCZB8$$wEc131u8C4iwtx973ZZLV",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/bronze-customers"
+      }
+    },
+    "HcuzkqUuFeBQvaksyTisv$$wwNMnfoZONIronhOPePxn" : {
+      "id" : "HcuzkqUuFeBQvaksyTisv$$wwNMnfoZONIronhOPePxn",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Unnest_1",
+        "slug" : "Unnest_1",
+        "x" : 0,
+        "y" : -100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "KTI7DSMI8Izag6lFj8ivb$$k77hK_GE6ekRPDqUYMieg",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "errors",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "is_error",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "error_message",
+                  "type" : "string",
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "oPnMLbftCEW1O11RAjRcr$$K8srMra3WMokIfV0Sqt0D",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "is_error",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "errors.is_error"
+          },
+          "description" : ""
+        }, {
+          "target" : "error_message",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "errors.error_message"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "KTI7DSMI8Izag6lFj8ivb$$k77hK_GE6ekRPDqUYMieg##errors.is_error", "KTI7DSMI8Izag6lFj8ivb$$k77hK_GE6ekRPDqUYMieg##errors.error_message", "KTI7DSMI8Izag6lFj8ivb$$k77hK_GE6ekRPDqUYMieg##errors" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "chUHD9ntMOF5weJqUOosz$$Y2Lm5c9mAO2bQaEGE7nTh" : {
+      "id" : "chUHD9ntMOF5weJqUOosz$$Y2Lm5c9mAO2bQaEGE7nTh",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "AddCheckTime",
+        "slug" : "AddCheckTime",
+        "x" : 440,
+        "y" : -660,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "fj6CguHiANiXwS6SAptLo$$jm_Lizy_H25gV82J0fsQI",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "is_error",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "error_message",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "QtfuKmNyBqQTAyf_aFEoH$$_k5kW4Xx2f1H5yLb5hONZ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "checked_at",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "current_timestamp()"
+          },
+          "description" : ""
+        }, {
+          "target" : "is_error",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "is_error"
+          },
+          "description" : ""
+        }, {
+          "target" : "error_message",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "error_message"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "fj6CguHiANiXwS6SAptLo$$jm_Lizy_H25gV82J0fsQI##is_error", "fj6CguHiANiXwS6SAptLo$$jm_Lizy_H25gV82J0fsQI##error_message" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "eo_yHsSwpFHXFj57ocUFg$$vQd0AaMZH4Mz9FnT9EZWk" : {
+      "id" : "eo_yHsSwpFHXFj57ocUFg$$vQd0AaMZH4Mz9FnT9EZWk",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "CountMissing",
+        "slug" : "CountMissing",
+        "x" : -200,
+        "y" : -640,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "jNq7_1sSNYLyxLQUsi2eo$$OmJaAgvWFerXxkkdC8yNs",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "sales_customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "ybvWHJF0HHw__M0Pzpn5A$$jwpsb6xtKUYU5JD_KlYBb",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "missing_customer_id_count",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "sum(if(customer_customer_id is null, 1, 0))"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "jNq7_1sSNYLyxLQUsi2eo$$OmJaAgvWFerXxkkdC8yNs##customer_customer_id" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "UFZ27aIc0F7DJlRQRaCKB$$hZpmqyG09vvnF8zQ_GDfa" : {
+      "id" : "UFZ27aIc0F7DJlRQRaCKB$$hZpmqyG09vvnF8zQ_GDfa",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "SignupFilterEarly",
+        "slug" : "SignupFilterEarly",
+        "x" : -560,
+        "y" : -440,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PrpJgQG7Uoao520OrxlFq$$UAl6uTR1Y9R-aVSCR0NJb",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "signup_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "street_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "unit",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "city",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "postcode",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lat",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lon",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "G7FzryuS1rKLvSkCkZBU9$$oJc0QZiPC42k30_LW66zq",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "PrpJgQG7Uoao520OrxlFq$$UAl6uTR1Y9R-aVSCR0NJb##signup_date" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "signup_date < '2023-06-01'"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

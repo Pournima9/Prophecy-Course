@@ -1,0 +1,57 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: campaign_id
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: campaign_start
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: campaign_end
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: product_id
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: campaign_cost_micros_usd
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: revenue_generated_micros_usd
+    type: double
+    nullable: false
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+expectation:
+  version: '1.0'
+  expectations:
+  - id: c1B_n45FyKHCWT38kcGcu
+    enabled: true
+    interval: 0 0 0/1 * * ? *
+    expectationType: NoDuplicate
+    fields:
+      NoDuplicate:
+        table: silver-dim-campaign
+        column: campaign_id

@@ -1,0 +1,48 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: date_introduced
+    type: string
+    nullable: true
+    metadata:
+      description: The date when the product was first introduced to the market; Stored
+        as a string.
+      mappings: []
+      tags: []
+  - name: main_category
+    type: string
+    nullable: true
+    metadata:
+      description: The primary category under which the product is classified.
+      mappings: []
+      tags: []
+  - name: name
+    type: string
+    nullable: true
+    metadata:
+      description: The name of the product.
+      mappings: []
+      tags: []
+  - name: price_usd_cents
+    type: string
+    nullable: true
+    metadata:
+      description: The price of the product in USD, expressed in cents.
+      mappings: []
+      tags: []
+  - name: product_id
+    type: long
+    nullable: true
+    metadata:
+      description: A unique long integer identifier for each product.
+      mappings: []
+      tags: []
+  - name: sub_category
+    type: string
+    nullable: true
+    metadata:
+      description: Specific classification within a broader product category, indicating
+        the type or group the product belongs to.
+      mappings: []
+      tags: []

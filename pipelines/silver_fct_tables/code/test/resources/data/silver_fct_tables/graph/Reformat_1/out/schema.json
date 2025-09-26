@@ -1,0 +1,1 @@
+{"type":"struct","fields":[{"name":"product_id","type":"long","nullable":false,"metadata":{"description":"","mappings":[],"tags":[]}},{"name":"rand_product_id","type":"double","nullable":false,"metadata":{"description":"","mappings":[],"tags":[]}},{"name":"unique_id","type":"string","nullable":false,"metadata":{"description":"","mappings":[],"tags":[]}}]}

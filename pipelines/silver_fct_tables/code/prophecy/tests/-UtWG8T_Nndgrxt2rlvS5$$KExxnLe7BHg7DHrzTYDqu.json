@@ -1,0 +1,168 @@
+{
+  "unitTests" : [ {
+    "data" : {
+      "4m2uQq6Zee99PUpY9TDDX$$l3IOYLYk2GrOAEIRFE5av" : {
+        "values" : [ [ "9209102507408275945", "2024-01-15", "2160472374955089780" ], [ "9221313745924372007", "2023-12-25", "5586684962424738080" ], [ "9208457155724233655", "2023-11-15", "3787155678803302850" ], [ "9209945272735360508", "2023-10-31", "8129903240776590823" ], [ "9089674190241161116", "2023-01-30", "3811986661635219853" ], [ "9077564035073196455", "2023-09-12", "6686275967948016121" ], [ "9124089052193424318", "2023-08-22", "466961652051471580" ], [ "9148173146096168926", "2023-07-23", "7479562758080590755" ], [ "163207995416898602", "2023-01-07", "2284606296303258291" ], [ "9178062246357946712", "2023-06-26", "4532536315935928233" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "customer_id",
+            "type" : "long",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "sale_date",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "product_id",
+            "type" : "long",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "AS1DTEXi28PQh9FdL6y07$$Yw2rJy9ROh7L14siKsoBr" : {
+        "values" : [ [ "2254561906718354", "2023-02-09", "null", "5903", "SARATOGA CV", "null", "AUSTIN", "TX", "78746" ], [ "1150558892475960", "2023-01-31", "2023-03-18", "6446", "LEWIS CLARK TRL", "null", "SYCAMORE TOWNSHIP", "OH", "45241" ], [ "111150481861074", "2023-01-06", "2023-11-14", "3121", "MERRILL AVE", "null", "null", "WV", "25702" ], [ "1205177977431213", "2023-04-11", "2023-06-19", "823", "N CATARACT RD", "null", "COATESVILLE", "Indiana", "46120" ], [ "4085028007501696", "2023-09-07", "null", "3023", "CLUB HOUSE CI", "null", "COSTA MESA", "CA", "null" ], [ "5114514546544703", "2023-08-18", "null", "3045", "MCVITTY FOREST DR", "null", "ROANOKE", "VA", "24018" ], [ "1133280536908506", "2023-11-17", "2023-12-18", "1040", "NORTH PLEASANT STREET", "50", "AMHERST", "MA", "01002" ], [ "665682800237947", "2024-01-01", "null", "2860", "BRIDGEPORT LN", "null", "AURORA", "IL", "60504" ], [ "3748363447663245", "2023-06-28", "2023-08-01", "21", "Falcon Dr", "null", "Sherwood", "AR", "72120" ], [ "1810681024590181", "2023-07-30", "2023-10-07", "1108", "PINE NEEDLE DR", "null", "null", "ga", "null" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "customer_id",
+            "type" : "long",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "valid_from",
+            "type" : "date",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "valid_to",
+            "type" : "date",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "street_number",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "street_name",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "unit",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "city",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "state",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "postcode",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "1nxsTYCHLWInLqQzUeGZT$$Ck3e1wgZrGTz-_l7ArKkg" : {
+        "values" : [ [ "9061001869999580126" ], [ "9130168565477032521" ], [ "9107876713192723716" ], [ "9130537384136084595" ], [ "9213833265465585133" ], [ "8701070990533038344" ], [ "9108427883277307465" ], [ "9043552582244045160" ], [ "9202639843017352838" ], [ "9211062829479498710" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "product_id",
+            "type" : "long",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "ER7OfaqNeuQwHT1VGENxg$$VLEZc804wHL3YeqUgnQcz" : {
+        "values" : [ ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "shipping_full_address",
+            "type" : "string",
+            "nullable" : false,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      }
+    },
+    "name" : "TestFullAddress",
+    "testType" : "outputRow",
+    "language" : "python"
+  } ],
+  "language" : "python"
+}

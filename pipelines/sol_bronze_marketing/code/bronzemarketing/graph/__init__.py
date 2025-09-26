@@ -1,0 +1,4 @@
+from .raw_marketing_campaigns import raw_marketing_campaigns
+from .bronze_marketing_campaigns import bronze_marketing_campaigns
+from .raw_marketing_events import raw_marketing_events
+from .bronze_marketing_events import bronze_marketing_events

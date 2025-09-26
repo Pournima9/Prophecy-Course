@@ -1,0 +1,1307 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.10.0",
+        "pyPiVersion" : "1.9.49"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/lab_bronze_marketing_increment",
+    "sourceSuggestions" : [ {
+      "sourceLabel" : "test_campaign_read_version",
+      "sourceDatasetId" : "datasets/test_campaign_read_version",
+      "canJoinWith" : [ {
+        "processLabel" : "raw-marketing-events-increment",
+        "processId" : "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f",
+        "joinColumns" : [ "campaign_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "campaign_id" ],
+          "conditions" : [ {
+            "alias" : "test_campaign_read_version",
+            "expression" : "('raw-marketing-events-increment'['campaign_id'] = test_campaign_read_version.campaign_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "campaign_start",
+            "expression" : "test_campaign_read_version.campaign_start"
+          }, {
+            "alias" : "campaign_end",
+            "expression" : "test_campaign_read_version.campaign_end"
+          }, {
+            "alias" : "product_id",
+            "expression" : "test_campaign_read_version.product_id"
+          }, {
+            "alias" : "campaign_cost_micros_usd",
+            "expression" : "test_campaign_read_version.campaign_cost_micros_usd"
+          }, {
+            "alias" : "revenue_generated_micros_usd",
+            "expression" : "test_campaign_read_version.revenue_generated_micros_usd"
+          }, {
+            "alias" : "as_of",
+            "expression" : "test_campaign_read_version.as_of"
+          }, {
+            "alias" : "campaign_slogan",
+            "expression" : "test_campaign_read_version.campaign_slogan"
+          }, {
+            "alias" : "device_conn_type",
+            "expression" : "'raw-marketing-events-increment'['device_conn_type']"
+          }, {
+            "alias" : "click",
+            "expression" : "'raw-marketing-events-increment'['click']"
+          }, {
+            "alias" : "C16",
+            "expression" : "'raw-marketing-events-increment'['C16']"
+          }, {
+            "alias" : "site_domain",
+            "expression" : "'raw-marketing-events-increment'['site_domain']"
+          }, {
+            "alias" : "banner_pos",
+            "expression" : "'raw-marketing-events-increment'['banner_pos']"
+          }, {
+            "alias" : "cost_usd_micros",
+            "expression" : "'raw-marketing-events-increment'['cost_usd_micros']"
+          }, {
+            "alias" : "device_ip",
+            "expression" : "'raw-marketing-events-increment'['device_ip']"
+          }, {
+            "alias" : "C19",
+            "expression" : "'raw-marketing-events-increment'['C19']"
+          }, {
+            "alias" : "site_id",
+            "expression" : "'raw-marketing-events-increment'['site_id']"
+          }, {
+            "alias" : "campaign_id",
+            "expression" : "'raw-marketing-events-increment'['campaign_id']"
+          }, {
+            "alias" : "site_category",
+            "expression" : "'raw-marketing-events-increment'['site_category']"
+          }, {
+            "alias" : "event_id",
+            "expression" : "'raw-marketing-events-increment'['event_id']"
+          }, {
+            "alias" : "C1",
+            "expression" : "'raw-marketing-events-increment'['C1']"
+          }, {
+            "alias" : "C17",
+            "expression" : "'raw-marketing-events-increment'['C17']"
+          }, {
+            "alias" : "dt",
+            "expression" : "'raw-marketing-events-increment'['dt']"
+          }, {
+            "alias" : "C20",
+            "expression" : "'raw-marketing-events-increment'['C20']"
+          }, {
+            "alias" : "device_model",
+            "expression" : "'raw-marketing-events-increment'['device_model']"
+          }, {
+            "alias" : "C18",
+            "expression" : "'raw-marketing-events-increment'['C18']"
+          }, {
+            "alias" : "event_time",
+            "expression" : "'raw-marketing-events-increment'['event_time']"
+          }, {
+            "alias" : "device_id",
+            "expression" : "'raw-marketing-events-increment'['device_id']"
+          }, {
+            "alias" : "device_type",
+            "expression" : "'raw-marketing-events-increment'['device_type']"
+          }, {
+            "alias" : "C21",
+            "expression" : "'raw-marketing-events-increment'['C21']"
+          }, {
+            "alias" : "app_id",
+            "expression" : "'raw-marketing-events-increment'['app_id']"
+          }, {
+            "alias" : "app_domain",
+            "expression" : "'raw-marketing-events-increment'['app_domain']"
+          }, {
+            "alias" : "app_category",
+            "expression" : "'raw-marketing-events-increment'['app_category']"
+          }, {
+            "alias" : "C14",
+            "expression" : "'raw-marketing-events-increment'['C14']"
+          }, {
+            "alias" : "C15",
+            "expression" : "'raw-marketing-events-increment'['C15']"
+          } ],
+          "headAlias" : "datasets/test_campaign_read_version"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "write_marketing_event",
+      "sourceDatasetId" : "datasets/write_marketing_event",
+      "canJoinWith" : [ {
+        "processLabel" : "raw-marketing-events-increment",
+        "processId" : "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f",
+        "joinColumns" : [ "app_id", "campaign_id", "device_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "app_id", "campaign_id", "device_id" ],
+          "conditions" : [ {
+            "alias" : "write_marketing_event",
+            "expression" : "((('raw-marketing-events-increment'['app_id'] = write_marketing_event.app_id) AND ('raw-marketing-events-increment'['campaign_id'] = write_marketing_event.campaign_id)) AND ('raw-marketing-events-increment'['device_id'] = write_marketing_event.device_id))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "device_conn_type",
+            "expression" : "'raw-marketing-events-increment'['device_conn_type']"
+          }, {
+            "alias" : "click",
+            "expression" : "'raw-marketing-events-increment'['click']"
+          }, {
+            "alias" : "C16",
+            "expression" : "'raw-marketing-events-increment'['C16']"
+          }, {
+            "alias" : "site_domain",
+            "expression" : "'raw-marketing-events-increment'['site_domain']"
+          }, {
+            "alias" : "banner_pos",
+            "expression" : "'raw-marketing-events-increment'['banner_pos']"
+          }, {
+            "alias" : "cost_usd_micros",
+            "expression" : "'raw-marketing-events-increment'['cost_usd_micros']"
+          }, {
+            "alias" : "device_ip",
+            "expression" : "'raw-marketing-events-increment'['device_ip']"
+          }, {
+            "alias" : "C19",
+            "expression" : "'raw-marketing-events-increment'['C19']"
+          }, {
+            "alias" : "site_id",
+            "expression" : "'raw-marketing-events-increment'['site_id']"
+          }, {
+            "alias" : "campaign_id",
+            "expression" : "'raw-marketing-events-increment'['campaign_id']"
+          }, {
+            "alias" : "site_category",
+            "expression" : "'raw-marketing-events-increment'['site_category']"
+          }, {
+            "alias" : "event_id",
+            "expression" : "'raw-marketing-events-increment'['event_id']"
+          }, {
+            "alias" : "C1",
+            "expression" : "'raw-marketing-events-increment'['C1']"
+          }, {
+            "alias" : "C17",
+            "expression" : "'raw-marketing-events-increment'['C17']"
+          }, {
+            "alias" : "dt",
+            "expression" : "'raw-marketing-events-increment'['dt']"
+          }, {
+            "alias" : "C20",
+            "expression" : "'raw-marketing-events-increment'['C20']"
+          }, {
+            "alias" : "device_model",
+            "expression" : "'raw-marketing-events-increment'['device_model']"
+          }, {
+            "alias" : "C18",
+            "expression" : "'raw-marketing-events-increment'['C18']"
+          }, {
+            "alias" : "event_time",
+            "expression" : "'raw-marketing-events-increment'['event_time']"
+          }, {
+            "alias" : "device_id",
+            "expression" : "'raw-marketing-events-increment'['device_id']"
+          }, {
+            "alias" : "device_type",
+            "expression" : "'raw-marketing-events-increment'['device_type']"
+          }, {
+            "alias" : "C21",
+            "expression" : "'raw-marketing-events-increment'['C21']"
+          }, {
+            "alias" : "app_id",
+            "expression" : "'raw-marketing-events-increment'['app_id']"
+          }, {
+            "alias" : "app_domain",
+            "expression" : "'raw-marketing-events-increment'['app_domain']"
+          }, {
+            "alias" : "app_category",
+            "expression" : "'raw-marketing-events-increment'['app_category']"
+          }, {
+            "alias" : "C14",
+            "expression" : "'raw-marketing-events-increment'['C14']"
+          }, {
+            "alias" : "C15",
+            "expression" : "'raw-marketing-events-increment'['C15']"
+          } ],
+          "headAlias" : "datasets/write_marketing_event"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "target_dim_campaig",
+      "sourceDatasetId" : "datasets/target_dim_campaig",
+      "canJoinWith" : [ {
+        "processLabel" : "raw-marketing-events-increment",
+        "processId" : "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f",
+        "joinColumns" : [ "campaign_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "campaign_id" ],
+          "conditions" : [ {
+            "alias" : "target_dim_campaig",
+            "expression" : "('raw-marketing-events-increment'['campaign_id'] = target_dim_campaig.campaign_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "campaign_cost_micro_usd",
+            "expression" : "target_dim_campaig.campaign_cost_micro_usd"
+          }, {
+            "alias" : "total_reve_by_each_campn",
+            "expression" : "target_dim_campaig.total_reve_by_each_campn"
+          }, {
+            "alias" : "campaign_end",
+            "expression" : "target_dim_campaig.campaign_end"
+          }, {
+            "alias" : "campaign_start",
+            "expression" : "target_dim_campaig.campaign_start"
+          }, {
+            "alias" : "product_id",
+            "expression" : "target_dim_campaig.product_id"
+          }, {
+            "alias" : "device_conn_type",
+            "expression" : "'raw-marketing-events-increment'['device_conn_type']"
+          }, {
+            "alias" : "click",
+            "expression" : "'raw-marketing-events-increment'['click']"
+          }, {
+            "alias" : "C16",
+            "expression" : "'raw-marketing-events-increment'['C16']"
+          }, {
+            "alias" : "site_domain",
+            "expression" : "'raw-marketing-events-increment'['site_domain']"
+          }, {
+            "alias" : "banner_pos",
+            "expression" : "'raw-marketing-events-increment'['banner_pos']"
+          }, {
+            "alias" : "cost_usd_micros",
+            "expression" : "'raw-marketing-events-increment'['cost_usd_micros']"
+          }, {
+            "alias" : "device_ip",
+            "expression" : "'raw-marketing-events-increment'['device_ip']"
+          }, {
+            "alias" : "C19",
+            "expression" : "'raw-marketing-events-increment'['C19']"
+          }, {
+            "alias" : "site_id",
+            "expression" : "'raw-marketing-events-increment'['site_id']"
+          }, {
+            "alias" : "campaign_id",
+            "expression" : "'raw-marketing-events-increment'['campaign_id']"
+          }, {
+            "alias" : "site_category",
+            "expression" : "'raw-marketing-events-increment'['site_category']"
+          }, {
+            "alias" : "event_id",
+            "expression" : "'raw-marketing-events-increment'['event_id']"
+          }, {
+            "alias" : "C1",
+            "expression" : "'raw-marketing-events-increment'['C1']"
+          }, {
+            "alias" : "C17",
+            "expression" : "'raw-marketing-events-increment'['C17']"
+          }, {
+            "alias" : "dt",
+            "expression" : "'raw-marketing-events-increment'['dt']"
+          }, {
+            "alias" : "C20",
+            "expression" : "'raw-marketing-events-increment'['C20']"
+          }, {
+            "alias" : "device_model",
+            "expression" : "'raw-marketing-events-increment'['device_model']"
+          }, {
+            "alias" : "C18",
+            "expression" : "'raw-marketing-events-increment'['C18']"
+          }, {
+            "alias" : "event_time",
+            "expression" : "'raw-marketing-events-increment'['event_time']"
+          }, {
+            "alias" : "device_id",
+            "expression" : "'raw-marketing-events-increment'['device_id']"
+          }, {
+            "alias" : "device_type",
+            "expression" : "'raw-marketing-events-increment'['device_type']"
+          }, {
+            "alias" : "C21",
+            "expression" : "'raw-marketing-events-increment'['C21']"
+          }, {
+            "alias" : "app_id",
+            "expression" : "'raw-marketing-events-increment'['app_id']"
+          }, {
+            "alias" : "app_domain",
+            "expression" : "'raw-marketing-events-increment'['app_domain']"
+          }, {
+            "alias" : "app_category",
+            "expression" : "'raw-marketing-events-increment'['app_category']"
+          }, {
+            "alias" : "C14",
+            "expression" : "'raw-marketing-events-increment'['C14']"
+          }, {
+            "alias" : "C15",
+            "expression" : "'raw-marketing-events-increment'['C15']"
+          } ],
+          "headAlias" : "datasets/target_dim_campaig"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "bronze_clickthroughs",
+      "sourceDatasetId" : "datasets/bronze-clickthroughs",
+      "canJoinWith" : [ {
+        "processLabel" : "raw-marketing-events-increment",
+        "processId" : "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f",
+        "joinColumns" : [ "app_id", "device_id", "site_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "app_id", "device_id", "site_id" ],
+          "conditions" : [ {
+            "alias" : "bronze_clickthroughs",
+            "expression" : "((('raw-marketing-events-increment'['app_id'] = bronze_clickthroughs.app_id) AND ('raw-marketing-events-increment'['device_id'] = bronze_clickthroughs.device_id)) AND ('raw-marketing-events-increment'['site_id'] = bronze_clickthroughs.site_id))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "id",
+            "expression" : "bronze_clickthroughs.id"
+          }, {
+            "alias" : "customer_id",
+            "expression" : "bronze_clickthroughs.customer_id"
+          }, {
+            "alias" : "signup_date",
+            "expression" : "bronze_clickthroughs.signup_date"
+          }, {
+            "alias" : "hour",
+            "expression" : "bronze_clickthroughs.hour"
+          }, {
+            "alias" : "sales_id",
+            "expression" : "bronze_clickthroughs.sales_id"
+          }, {
+            "alias" : "sale_date",
+            "expression" : "bronze_clickthroughs.sale_date"
+          }, {
+            "alias" : "product_id",
+            "expression" : "bronze_clickthroughs.product_id"
+          }, {
+            "alias" : "device_conn_type",
+            "expression" : "'raw-marketing-events-increment'['device_conn_type']"
+          }, {
+            "alias" : "click",
+            "expression" : "'raw-marketing-events-increment'['click']"
+          }, {
+            "alias" : "C16",
+            "expression" : "'raw-marketing-events-increment'['C16']"
+          }, {
+            "alias" : "site_domain",
+            "expression" : "'raw-marketing-events-increment'['site_domain']"
+          }, {
+            "alias" : "banner_pos",
+            "expression" : "'raw-marketing-events-increment'['banner_pos']"
+          }, {
+            "alias" : "cost_usd_micros",
+            "expression" : "'raw-marketing-events-increment'['cost_usd_micros']"
+          }, {
+            "alias" : "device_ip",
+            "expression" : "'raw-marketing-events-increment'['device_ip']"
+          }, {
+            "alias" : "C19",
+            "expression" : "'raw-marketing-events-increment'['C19']"
+          }, {
+            "alias" : "site_id",
+            "expression" : "'raw-marketing-events-increment'['site_id']"
+          }, {
+            "alias" : "campaign_id",
+            "expression" : "'raw-marketing-events-increment'['campaign_id']"
+          }, {
+            "alias" : "site_category",
+            "expression" : "'raw-marketing-events-increment'['site_category']"
+          }, {
+            "alias" : "event_id",
+            "expression" : "'raw-marketing-events-increment'['event_id']"
+          }, {
+            "alias" : "C1",
+            "expression" : "'raw-marketing-events-increment'['C1']"
+          }, {
+            "alias" : "C17",
+            "expression" : "'raw-marketing-events-increment'['C17']"
+          }, {
+            "alias" : "dt",
+            "expression" : "'raw-marketing-events-increment'['dt']"
+          }, {
+            "alias" : "C20",
+            "expression" : "'raw-marketing-events-increment'['C20']"
+          }, {
+            "alias" : "device_model",
+            "expression" : "'raw-marketing-events-increment'['device_model']"
+          }, {
+            "alias" : "C18",
+            "expression" : "'raw-marketing-events-increment'['C18']"
+          }, {
+            "alias" : "event_time",
+            "expression" : "'raw-marketing-events-increment'['event_time']"
+          }, {
+            "alias" : "device_id",
+            "expression" : "'raw-marketing-events-increment'['device_id']"
+          }, {
+            "alias" : "device_type",
+            "expression" : "'raw-marketing-events-increment'['device_type']"
+          }, {
+            "alias" : "C21",
+            "expression" : "'raw-marketing-events-increment'['C21']"
+          }, {
+            "alias" : "app_id",
+            "expression" : "'raw-marketing-events-increment'['app_id']"
+          }, {
+            "alias" : "app_domain",
+            "expression" : "'raw-marketing-events-increment'['app_domain']"
+          }, {
+            "alias" : "app_category",
+            "expression" : "'raw-marketing-events-increment'['app_category']"
+          }, {
+            "alias" : "C14",
+            "expression" : "'raw-marketing-events-increment'['C14']"
+          }, {
+            "alias" : "C15",
+            "expression" : "'raw-marketing-events-increment'['C15']"
+          } ],
+          "headAlias" : "datasets/bronze-clickthroughs"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "bronze_marketing_events_increment",
+      "sourceDatasetId" : "datasets/bronze-marketing-events-increment",
+      "canJoinWith" : [ {
+        "processLabel" : "raw-marketing-events-increment",
+        "processId" : "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f",
+        "joinColumns" : [ "app_id", "campaign_id", "device_id" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "app_id", "campaign_id", "device_id" ],
+          "conditions" : [ {
+            "alias" : "bronze_marketing_events_increment",
+            "expression" : "((('raw-marketing-events-increment'['app_id'] = bronze_marketing_events_increment.app_id) AND ('raw-marketing-events-increment'['campaign_id'] = bronze_marketing_events_increment.campaign_id)) AND ('raw-marketing-events-increment'['device_id'] = bronze_marketing_events_increment.device_id))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "device_conn_type",
+            "expression" : "'raw-marketing-events-increment'['device_conn_type']"
+          }, {
+            "alias" : "click",
+            "expression" : "'raw-marketing-events-increment'['click']"
+          }, {
+            "alias" : "C16",
+            "expression" : "'raw-marketing-events-increment'['C16']"
+          }, {
+            "alias" : "site_domain",
+            "expression" : "'raw-marketing-events-increment'['site_domain']"
+          }, {
+            "alias" : "banner_pos",
+            "expression" : "'raw-marketing-events-increment'['banner_pos']"
+          }, {
+            "alias" : "cost_usd_micros",
+            "expression" : "'raw-marketing-events-increment'['cost_usd_micros']"
+          }, {
+            "alias" : "device_ip",
+            "expression" : "'raw-marketing-events-increment'['device_ip']"
+          }, {
+            "alias" : "C19",
+            "expression" : "'raw-marketing-events-increment'['C19']"
+          }, {
+            "alias" : "site_id",
+            "expression" : "'raw-marketing-events-increment'['site_id']"
+          }, {
+            "alias" : "campaign_id",
+            "expression" : "'raw-marketing-events-increment'['campaign_id']"
+          }, {
+            "alias" : "site_category",
+            "expression" : "'raw-marketing-events-increment'['site_category']"
+          }, {
+            "alias" : "event_id",
+            "expression" : "'raw-marketing-events-increment'['event_id']"
+          }, {
+            "alias" : "C1",
+            "expression" : "'raw-marketing-events-increment'['C1']"
+          }, {
+            "alias" : "C17",
+            "expression" : "'raw-marketing-events-increment'['C17']"
+          }, {
+            "alias" : "dt",
+            "expression" : "'raw-marketing-events-increment'['dt']"
+          }, {
+            "alias" : "C20",
+            "expression" : "'raw-marketing-events-increment'['C20']"
+          }, {
+            "alias" : "device_model",
+            "expression" : "'raw-marketing-events-increment'['device_model']"
+          }, {
+            "alias" : "C18",
+            "expression" : "'raw-marketing-events-increment'['C18']"
+          }, {
+            "alias" : "event_time",
+            "expression" : "'raw-marketing-events-increment'['event_time']"
+          }, {
+            "alias" : "device_id",
+            "expression" : "'raw-marketing-events-increment'['device_id']"
+          }, {
+            "alias" : "device_type",
+            "expression" : "'raw-marketing-events-increment'['device_type']"
+          }, {
+            "alias" : "C21",
+            "expression" : "'raw-marketing-events-increment'['C21']"
+          }, {
+            "alias" : "app_id",
+            "expression" : "'raw-marketing-events-increment'['app_id']"
+          }, {
+            "alias" : "app_domain",
+            "expression" : "'raw-marketing-events-increment'['app_domain']"
+          }, {
+            "alias" : "app_category",
+            "expression" : "'raw-marketing-events-increment'['app_category']"
+          }, {
+            "alias" : "C14",
+            "expression" : "'raw-marketing-events-increment'['C14']"
+          }, {
+            "alias" : "C15",
+            "expression" : "'raw-marketing-events-increment'['C15']"
+          } ],
+          "headAlias" : "datasets/bronze-marketing-events-increment"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "silver_dim_campaign",
+      "sourceDatasetId" : "datasets/silver-dim-campaign",
+      "canJoinWith" : [ {
+        "processLabel" : "raw-marketing-events-increment",
+        "processId" : "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f",
+        "joinColumns" : [ "campaign_id" ],
+        "isRecommended" : false,
+        "properties" : {
+          "columnsSelector" : [ "campaign_id" ],
+          "conditions" : [ {
+            "alias" : "silver_dim_campaign",
+            "expression" : "('raw-marketing-events-increment'['campaign_id'] = silver_dim_campaign.campaign_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "campaign_start",
+            "expression" : "silver_dim_campaign.campaign_start"
+          }, {
+            "alias" : "campaign_end",
+            "expression" : "silver_dim_campaign.campaign_end"
+          }, {
+            "alias" : "product_id",
+            "expression" : "silver_dim_campaign.product_id"
+          }, {
+            "alias" : "campaign_cost_micros_usd",
+            "expression" : "silver_dim_campaign.campaign_cost_micros_usd"
+          }, {
+            "alias" : "revenue_generated_micros_usd",
+            "expression" : "silver_dim_campaign.revenue_generated_micros_usd"
+          }, {
+            "alias" : "device_conn_type",
+            "expression" : "'raw-marketing-events-increment'['device_conn_type']"
+          }, {
+            "alias" : "click",
+            "expression" : "'raw-marketing-events-increment'['click']"
+          }, {
+            "alias" : "C16",
+            "expression" : "'raw-marketing-events-increment'['C16']"
+          }, {
+            "alias" : "site_domain",
+            "expression" : "'raw-marketing-events-increment'['site_domain']"
+          }, {
+            "alias" : "banner_pos",
+            "expression" : "'raw-marketing-events-increment'['banner_pos']"
+          }, {
+            "alias" : "cost_usd_micros",
+            "expression" : "'raw-marketing-events-increment'['cost_usd_micros']"
+          }, {
+            "alias" : "device_ip",
+            "expression" : "'raw-marketing-events-increment'['device_ip']"
+          }, {
+            "alias" : "C19",
+            "expression" : "'raw-marketing-events-increment'['C19']"
+          }, {
+            "alias" : "site_id",
+            "expression" : "'raw-marketing-events-increment'['site_id']"
+          }, {
+            "alias" : "campaign_id",
+            "expression" : "'raw-marketing-events-increment'['campaign_id']"
+          }, {
+            "alias" : "site_category",
+            "expression" : "'raw-marketing-events-increment'['site_category']"
+          }, {
+            "alias" : "event_id",
+            "expression" : "'raw-marketing-events-increment'['event_id']"
+          }, {
+            "alias" : "C1",
+            "expression" : "'raw-marketing-events-increment'['C1']"
+          }, {
+            "alias" : "C17",
+            "expression" : "'raw-marketing-events-increment'['C17']"
+          }, {
+            "alias" : "dt",
+            "expression" : "'raw-marketing-events-increment'['dt']"
+          }, {
+            "alias" : "C20",
+            "expression" : "'raw-marketing-events-increment'['C20']"
+          }, {
+            "alias" : "device_model",
+            "expression" : "'raw-marketing-events-increment'['device_model']"
+          }, {
+            "alias" : "C18",
+            "expression" : "'raw-marketing-events-increment'['C18']"
+          }, {
+            "alias" : "event_time",
+            "expression" : "'raw-marketing-events-increment'['event_time']"
+          }, {
+            "alias" : "device_id",
+            "expression" : "'raw-marketing-events-increment'['device_id']"
+          }, {
+            "alias" : "device_type",
+            "expression" : "'raw-marketing-events-increment'['device_type']"
+          }, {
+            "alias" : "C21",
+            "expression" : "'raw-marketing-events-increment'['C21']"
+          }, {
+            "alias" : "app_id",
+            "expression" : "'raw-marketing-events-increment'['app_id']"
+          }, {
+            "alias" : "app_domain",
+            "expression" : "'raw-marketing-events-increment'['app_domain']"
+          }, {
+            "alias" : "app_category",
+            "expression" : "'raw-marketing-events-increment'['app_category']"
+          }, {
+            "alias" : "C14",
+            "expression" : "'raw-marketing-events-increment'['C14']"
+          }, {
+            "alias" : "C15",
+            "expression" : "'raw-marketing-events-increment'['C15']"
+          } ],
+          "headAlias" : "datasets/silver-dim-campaign"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "raw_marketing_campaigns",
+      "sourceDatasetId" : "datasets/raw-marketing-campaigns",
+      "canJoinWith" : [ {
+        "processLabel" : "raw-marketing-events-increment",
+        "processId" : "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f",
+        "joinColumns" : [ "campaign_id" ],
+        "isRecommended" : false,
+        "properties" : {
+          "columnsSelector" : [ "campaign_id" ],
+          "conditions" : [ {
+            "alias" : "raw_marketing_campaigns",
+            "expression" : "('raw-marketing-events-increment'['campaign_id'] = raw_marketing_campaigns.campaign_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "campaign_end",
+            "expression" : "raw_marketing_campaigns.campaign_end"
+          }, {
+            "alias" : "campaign_start",
+            "expression" : "raw_marketing_campaigns.campaign_start"
+          }, {
+            "alias" : "product_id",
+            "expression" : "raw_marketing_campaigns.product_id"
+          }, {
+            "alias" : "device_conn_type",
+            "expression" : "'raw-marketing-events-increment'['device_conn_type']"
+          }, {
+            "alias" : "click",
+            "expression" : "'raw-marketing-events-increment'['click']"
+          }, {
+            "alias" : "C16",
+            "expression" : "'raw-marketing-events-increment'['C16']"
+          }, {
+            "alias" : "site_domain",
+            "expression" : "'raw-marketing-events-increment'['site_domain']"
+          }, {
+            "alias" : "banner_pos",
+            "expression" : "'raw-marketing-events-increment'['banner_pos']"
+          }, {
+            "alias" : "cost_usd_micros",
+            "expression" : "'raw-marketing-events-increment'['cost_usd_micros']"
+          }, {
+            "alias" : "device_ip",
+            "expression" : "'raw-marketing-events-increment'['device_ip']"
+          }, {
+            "alias" : "C19",
+            "expression" : "'raw-marketing-events-increment'['C19']"
+          }, {
+            "alias" : "site_id",
+            "expression" : "'raw-marketing-events-increment'['site_id']"
+          }, {
+            "alias" : "campaign_id",
+            "expression" : "'raw-marketing-events-increment'['campaign_id']"
+          }, {
+            "alias" : "site_category",
+            "expression" : "'raw-marketing-events-increment'['site_category']"
+          }, {
+            "alias" : "event_id",
+            "expression" : "'raw-marketing-events-increment'['event_id']"
+          }, {
+            "alias" : "C1",
+            "expression" : "'raw-marketing-events-increment'['C1']"
+          }, {
+            "alias" : "C17",
+            "expression" : "'raw-marketing-events-increment'['C17']"
+          }, {
+            "alias" : "dt",
+            "expression" : "'raw-marketing-events-increment'['dt']"
+          }, {
+            "alias" : "C20",
+            "expression" : "'raw-marketing-events-increment'['C20']"
+          }, {
+            "alias" : "device_model",
+            "expression" : "'raw-marketing-events-increment'['device_model']"
+          }, {
+            "alias" : "C18",
+            "expression" : "'raw-marketing-events-increment'['C18']"
+          }, {
+            "alias" : "event_time",
+            "expression" : "'raw-marketing-events-increment'['event_time']"
+          }, {
+            "alias" : "device_id",
+            "expression" : "'raw-marketing-events-increment'['device_id']"
+          }, {
+            "alias" : "device_type",
+            "expression" : "'raw-marketing-events-increment'['device_type']"
+          }, {
+            "alias" : "C21",
+            "expression" : "'raw-marketing-events-increment'['C21']"
+          }, {
+            "alias" : "app_id",
+            "expression" : "'raw-marketing-events-increment'['app_id']"
+          }, {
+            "alias" : "app_domain",
+            "expression" : "'raw-marketing-events-increment'['app_domain']"
+          }, {
+            "alias" : "app_category",
+            "expression" : "'raw-marketing-events-increment'['app_category']"
+          }, {
+            "alias" : "C14",
+            "expression" : "'raw-marketing-events-increment'['C14']"
+          }, {
+            "alias" : "C15",
+            "expression" : "'raw-marketing-events-increment'['C15']"
+          } ],
+          "headAlias" : "datasets/raw-marketing-campaigns"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "raw_marketing_events",
+      "sourceDatasetId" : "datasets/raw-marketing-events",
+      "canJoinWith" : [ {
+        "processLabel" : "raw-marketing-events-increment",
+        "processId" : "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f",
+        "joinColumns" : [ "app_id", "campaign_id", "device_id" ],
+        "isRecommended" : false,
+        "properties" : {
+          "columnsSelector" : [ "app_id", "campaign_id", "device_id" ],
+          "conditions" : [ {
+            "alias" : "raw_marketing_events",
+            "expression" : "((('raw-marketing-events-increment'['app_id'] = raw_marketing_events.app_id) AND ('raw-marketing-events-increment'['campaign_id'] = raw_marketing_events.campaign_id)) AND ('raw-marketing-events-increment'['device_id'] = raw_marketing_events.device_id))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "device_conn_type",
+            "expression" : "'raw-marketing-events-increment'['device_conn_type']"
+          }, {
+            "alias" : "click",
+            "expression" : "'raw-marketing-events-increment'['click']"
+          }, {
+            "alias" : "C16",
+            "expression" : "'raw-marketing-events-increment'['C16']"
+          }, {
+            "alias" : "site_domain",
+            "expression" : "'raw-marketing-events-increment'['site_domain']"
+          }, {
+            "alias" : "banner_pos",
+            "expression" : "'raw-marketing-events-increment'['banner_pos']"
+          }, {
+            "alias" : "cost_usd_micros",
+            "expression" : "'raw-marketing-events-increment'['cost_usd_micros']"
+          }, {
+            "alias" : "device_ip",
+            "expression" : "'raw-marketing-events-increment'['device_ip']"
+          }, {
+            "alias" : "C19",
+            "expression" : "'raw-marketing-events-increment'['C19']"
+          }, {
+            "alias" : "site_id",
+            "expression" : "'raw-marketing-events-increment'['site_id']"
+          }, {
+            "alias" : "campaign_id",
+            "expression" : "'raw-marketing-events-increment'['campaign_id']"
+          }, {
+            "alias" : "site_category",
+            "expression" : "'raw-marketing-events-increment'['site_category']"
+          }, {
+            "alias" : "event_id",
+            "expression" : "'raw-marketing-events-increment'['event_id']"
+          }, {
+            "alias" : "C1",
+            "expression" : "'raw-marketing-events-increment'['C1']"
+          }, {
+            "alias" : "C17",
+            "expression" : "'raw-marketing-events-increment'['C17']"
+          }, {
+            "alias" : "dt",
+            "expression" : "'raw-marketing-events-increment'['dt']"
+          }, {
+            "alias" : "C20",
+            "expression" : "'raw-marketing-events-increment'['C20']"
+          }, {
+            "alias" : "device_model",
+            "expression" : "'raw-marketing-events-increment'['device_model']"
+          }, {
+            "alias" : "C18",
+            "expression" : "'raw-marketing-events-increment'['C18']"
+          }, {
+            "alias" : "event_time",
+            "expression" : "'raw-marketing-events-increment'['event_time']"
+          }, {
+            "alias" : "device_id",
+            "expression" : "'raw-marketing-events-increment'['device_id']"
+          }, {
+            "alias" : "device_type",
+            "expression" : "'raw-marketing-events-increment'['device_type']"
+          }, {
+            "alias" : "C21",
+            "expression" : "'raw-marketing-events-increment'['C21']"
+          }, {
+            "alias" : "app_id",
+            "expression" : "'raw-marketing-events-increment'['app_id']"
+          }, {
+            "alias" : "app_domain",
+            "expression" : "'raw-marketing-events-increment'['app_domain']"
+          }, {
+            "alias" : "app_category",
+            "expression" : "'raw-marketing-events-increment'['app_category']"
+          }, {
+            "alias" : "C14",
+            "expression" : "'raw-marketing-events-increment'['C14']"
+          }, {
+            "alias" : "C15",
+            "expression" : "'raw-marketing-events-increment'['C15']"
+          } ],
+          "headAlias" : "datasets/raw-marketing-events"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "clickthrough_sample",
+      "sourceDatasetId" : "datasets/clickthrough-sample",
+      "canJoinWith" : [ {
+        "processLabel" : "raw-marketing-events-increment",
+        "processId" : "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f",
+        "joinColumns" : [ "app_id", "device_id", "site_id" ],
+        "isRecommended" : false,
+        "properties" : {
+          "columnsSelector" : [ "app_id", "device_id", "site_id" ],
+          "conditions" : [ {
+            "alias" : "clickthrough_sample",
+            "expression" : "((('raw-marketing-events-increment'['app_id'] = clickthrough_sample.app_id) AND ('raw-marketing-events-increment'['device_id'] = clickthrough_sample.device_id)) AND ('raw-marketing-events-increment'['site_id'] = clickthrough_sample.site_id))",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "device_ordered_id",
+            "expression" : "clickthrough_sample.device_ordered_id"
+          }, {
+            "alias" : "total_device_events",
+            "expression" : "clickthrough_sample.total_device_events"
+          }, {
+            "alias" : "id",
+            "expression" : "clickthrough_sample.id"
+          }, {
+            "alias" : "hour",
+            "expression" : "clickthrough_sample.hour"
+          }, {
+            "alias" : "device_conn_type",
+            "expression" : "'raw-marketing-events-increment'['device_conn_type']"
+          }, {
+            "alias" : "click",
+            "expression" : "'raw-marketing-events-increment'['click']"
+          }, {
+            "alias" : "C16",
+            "expression" : "'raw-marketing-events-increment'['C16']"
+          }, {
+            "alias" : "site_domain",
+            "expression" : "'raw-marketing-events-increment'['site_domain']"
+          }, {
+            "alias" : "banner_pos",
+            "expression" : "'raw-marketing-events-increment'['banner_pos']"
+          }, {
+            "alias" : "cost_usd_micros",
+            "expression" : "'raw-marketing-events-increment'['cost_usd_micros']"
+          }, {
+            "alias" : "device_ip",
+            "expression" : "'raw-marketing-events-increment'['device_ip']"
+          }, {
+            "alias" : "C19",
+            "expression" : "'raw-marketing-events-increment'['C19']"
+          }, {
+            "alias" : "site_id",
+            "expression" : "'raw-marketing-events-increment'['site_id']"
+          }, {
+            "alias" : "campaign_id",
+            "expression" : "'raw-marketing-events-increment'['campaign_id']"
+          }, {
+            "alias" : "site_category",
+            "expression" : "'raw-marketing-events-increment'['site_category']"
+          }, {
+            "alias" : "event_id",
+            "expression" : "'raw-marketing-events-increment'['event_id']"
+          }, {
+            "alias" : "C1",
+            "expression" : "'raw-marketing-events-increment'['C1']"
+          }, {
+            "alias" : "C17",
+            "expression" : "'raw-marketing-events-increment'['C17']"
+          }, {
+            "alias" : "dt",
+            "expression" : "'raw-marketing-events-increment'['dt']"
+          }, {
+            "alias" : "C20",
+            "expression" : "'raw-marketing-events-increment'['C20']"
+          }, {
+            "alias" : "device_model",
+            "expression" : "'raw-marketing-events-increment'['device_model']"
+          }, {
+            "alias" : "C18",
+            "expression" : "'raw-marketing-events-increment'['C18']"
+          }, {
+            "alias" : "event_time",
+            "expression" : "'raw-marketing-events-increment'['event_time']"
+          }, {
+            "alias" : "device_id",
+            "expression" : "'raw-marketing-events-increment'['device_id']"
+          }, {
+            "alias" : "device_type",
+            "expression" : "'raw-marketing-events-increment'['device_type']"
+          }, {
+            "alias" : "C21",
+            "expression" : "'raw-marketing-events-increment'['C21']"
+          }, {
+            "alias" : "app_id",
+            "expression" : "'raw-marketing-events-increment'['app_id']"
+          }, {
+            "alias" : "app_domain",
+            "expression" : "'raw-marketing-events-increment'['app_domain']"
+          }, {
+            "alias" : "app_category",
+            "expression" : "'raw-marketing-events-increment'['app_category']"
+          }, {
+            "alias" : "C14",
+            "expression" : "'raw-marketing-events-increment'['C14']"
+          }, {
+            "alias" : "C15",
+            "expression" : "'raw-marketing-events-increment'['C15']"
+          } ],
+          "headAlias" : "datasets/clickthrough-sample"
+        }
+      } ]
+    }, {
+      "sourceLabel" : "test_campaign_partitioned",
+      "sourceDatasetId" : "datasets/test_campaign_partitioned",
+      "canJoinWith" : [ {
+        "processLabel" : "raw-marketing-events-increment",
+        "processId" : "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f",
+        "joinColumns" : [ "campaign_id" ],
+        "isRecommended" : false,
+        "properties" : {
+          "columnsSelector" : [ "campaign_id" ],
+          "conditions" : [ {
+            "alias" : "test_campaign_partitioned",
+            "expression" : "('raw-marketing-events-increment'['campaign_id'] = test_campaign_partitioned.campaign_id)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "campaign_start",
+            "expression" : "test_campaign_partitioned.campaign_start"
+          }, {
+            "alias" : "campaign_end",
+            "expression" : "test_campaign_partitioned.campaign_end"
+          }, {
+            "alias" : "product_id",
+            "expression" : "test_campaign_partitioned.product_id"
+          }, {
+            "alias" : "campaign_cost_micros_usd",
+            "expression" : "test_campaign_partitioned.campaign_cost_micros_usd"
+          }, {
+            "alias" : "revenue_generated_micros_usd",
+            "expression" : "test_campaign_partitioned.revenue_generated_micros_usd"
+          }, {
+            "alias" : "as_of",
+            "expression" : "test_campaign_partitioned.as_of"
+          }, {
+            "alias" : "device_conn_type",
+            "expression" : "'raw-marketing-events-increment'['device_conn_type']"
+          }, {
+            "alias" : "click",
+            "expression" : "'raw-marketing-events-increment'['click']"
+          }, {
+            "alias" : "C16",
+            "expression" : "'raw-marketing-events-increment'['C16']"
+          }, {
+            "alias" : "site_domain",
+            "expression" : "'raw-marketing-events-increment'['site_domain']"
+          }, {
+            "alias" : "banner_pos",
+            "expression" : "'raw-marketing-events-increment'['banner_pos']"
+          }, {
+            "alias" : "cost_usd_micros",
+            "expression" : "'raw-marketing-events-increment'['cost_usd_micros']"
+          }, {
+            "alias" : "device_ip",
+            "expression" : "'raw-marketing-events-increment'['device_ip']"
+          }, {
+            "alias" : "C19",
+            "expression" : "'raw-marketing-events-increment'['C19']"
+          }, {
+            "alias" : "site_id",
+            "expression" : "'raw-marketing-events-increment'['site_id']"
+          }, {
+            "alias" : "campaign_id",
+            "expression" : "'raw-marketing-events-increment'['campaign_id']"
+          }, {
+            "alias" : "site_category",
+            "expression" : "'raw-marketing-events-increment'['site_category']"
+          }, {
+            "alias" : "event_id",
+            "expression" : "'raw-marketing-events-increment'['event_id']"
+          }, {
+            "alias" : "C1",
+            "expression" : "'raw-marketing-events-increment'['C1']"
+          }, {
+            "alias" : "C17",
+            "expression" : "'raw-marketing-events-increment'['C17']"
+          }, {
+            "alias" : "dt",
+            "expression" : "'raw-marketing-events-increment'['dt']"
+          }, {
+            "alias" : "C20",
+            "expression" : "'raw-marketing-events-increment'['C20']"
+          }, {
+            "alias" : "device_model",
+            "expression" : "'raw-marketing-events-increment'['device_model']"
+          }, {
+            "alias" : "C18",
+            "expression" : "'raw-marketing-events-increment'['C18']"
+          }, {
+            "alias" : "event_time",
+            "expression" : "'raw-marketing-events-increment'['event_time']"
+          }, {
+            "alias" : "device_id",
+            "expression" : "'raw-marketing-events-increment'['device_id']"
+          }, {
+            "alias" : "device_type",
+            "expression" : "'raw-marketing-events-increment'['device_type']"
+          }, {
+            "alias" : "C21",
+            "expression" : "'raw-marketing-events-increment'['C21']"
+          }, {
+            "alias" : "app_id",
+            "expression" : "'raw-marketing-events-increment'['app_id']"
+          }, {
+            "alias" : "app_domain",
+            "expression" : "'raw-marketing-events-increment'['app_domain']"
+          }, {
+            "alias" : "app_category",
+            "expression" : "'raw-marketing-events-increment'['app_category']"
+          }, {
+            "alias" : "C14",
+            "expression" : "'raw-marketing-events-increment'['C14']"
+          }, {
+            "alias" : "C15",
+            "expression" : "'raw-marketing-events-increment'['C15']"
+          } ],
+          "headAlias" : "datasets/test_campaign_partitioned"
+        }
+      } ]
+    } ],
+    "pipelineSettingsInfo" : {
+      "isNullValuesInUnitTestsEnabled" : true
+    },
+    "language" : "python",
+    "fabricId" : "33408",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "prophecyteam.labsamples.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions", "prophecy.streaming.functions", "prophecyteam.prophecyanalyticalfunctionspython.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "dt",
+          "kind" : {
+            "type" : "string",
+            "value" : "2023-11-01"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "bronze",
+          "kind" : {
+            "type" : "string",
+            "value" : "bronze"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12656",
+      "projectName" : "ProphecyStreamingPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "16362",
+      "projectName" : "ProphecyAnalyticalFunctionsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "bronzemarketingincremental",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ ],
+  "processes" : {
+    "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f" : {
+      "id" : "btH9_LIIEQfThzwgG_h61$$ZKjO4wGY5xwvl8earXU3f",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "raw-marketing-events-increment",
+        "slug" : "raw_marketing_events_increment",
+        "x" : -1780,
+        "y" : -740,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "GdWvpYtV2oAr2_K__AwlP$$VqjkIP9ijxNNmB2uSNwZd",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/raw-marketing-events-increment"
+      }
+    },
+    "I9HN3gwolkEI2Ehe5Auji$$qTrPBpUueXDVn-WqVbqkw" : {
+      "id" : "I9HN3gwolkEI2Ehe5Auji$$qTrPBpUueXDVn-WqVbqkw",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "Target_1",
+        "slug" : "Target_1",
+        "x" : -1600,
+        "y" : -740,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tahVEzyRWQmxHvSMaHT30$$hesigdJ1UFlKsQHQiNqfk",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.I9HN3gwolkEI2Ehe5Auji$$qTrPBpUueXDVn-WqVbqkw.ports.inputs[0]",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.I9HN3gwolkEI2Ehe5Auji$$qTrPBpUueXDVn-WqVbqkw.properties.datasetId",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "dataset id missing",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
+}

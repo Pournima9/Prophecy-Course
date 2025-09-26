@@ -1,0 +1,25 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: checked_at
+    type: timestamp
+    nullable: false
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: is_error
+    type: boolean
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: error_message
+    type: string
+    nullable: false
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

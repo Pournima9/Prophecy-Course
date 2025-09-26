@@ -1,0 +1,32 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: campaign_quarter
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: campaign_cost_usd
+    type: decimal(30,2)
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: revenue_generated_usd
+    type: decimal(30,2)
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: campaign_profit
+    type: decimal(31,2)
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

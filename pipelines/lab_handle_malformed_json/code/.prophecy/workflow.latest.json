@@ -1,0 +1,471 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.10.0",
+        "pyPiVersion" : "1.9.49"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/lab_handle_malformed_json",
+    "sourceSuggestions" : [ ],
+    "pipelineSettingsInfo" : {
+      "isNullValuesInUnitTestsEnabled" : true
+    },
+    "language" : "python",
+    "fabricId" : "33408",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "prophecyteam.labsamples.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions", "prophecy.streaming.functions", "prophecyteam.prophecyanalyticalfunctionspython.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "bronze",
+          "kind" : {
+            "type" : "string",
+            "value" : "bronze"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12656",
+      "projectName" : "ProphecyStreamingPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "16362",
+      "projectName" : "ProphecyAnalyticalFunctionsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "sol_module_6",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "470L7_xa0CpYNBpCTZVYx$$ZljeC0K2oZV_phpJzUNix",
+    "source" : "Wdo7X8gin3oQTvrkyufCN$$U0qBO-JJmdD2P-ph6wbyx",
+    "sourcePort" : "wOCPbZrHKOBf5vho5Z3L-$$9Sednz8JsUV0Q2UIRDFT4",
+    "target" : "eum8rQCwpPADL2hT-Cuau$$9nhZdAp91IYjzPF7RUJZA",
+    "targetPort" : "RtImibfDTk_CTyLUmmkzF$$n2ymdQ1tbtutQ9KT1WSlt"
+  }, {
+    "id" : "-yiWZtMLHo6Xu8Vw4liZL$$Vwf3NZRToRABCvad_CT8H",
+    "source" : "eum8rQCwpPADL2hT-Cuau$$9nhZdAp91IYjzPF7RUJZA",
+    "sourcePort" : "VfANhWTLos3B0mJT1JmQP$$Gf2a6kiGBXq-wLLpiknHs",
+    "target" : "I8Et3yQq7wDiQpqx5xjYh$$mL2XIEc3RqzP2vWZM0x5F",
+    "targetPort" : "U5Q64nstCmrWdKPWztaen$$5dhAn67EoOqQ497tPZJjG"
+  }, {
+    "id" : "IXJuQ9NzsR6I0HQZ0b8VO$$Fk331dGEB01hPhVxDu3Rx",
+    "source" : "I8Et3yQq7wDiQpqx5xjYh$$mL2XIEc3RqzP2vWZM0x5F",
+    "sourcePort" : "CBP7zM8TA-TWPBCkj-uuH$$NQDa64d1to36LyOU9Pl5N",
+    "target" : "26A4kF-uSAiAR736jO3uh$$vsC7nDfLgu6ZPYeis6zfl",
+    "targetPort" : "Gh8TZN4utg5twItIRqEuR$$QqpHGSRdlFUi61D95gm5H"
+  } ],
+  "processes" : {
+    "Wdo7X8gin3oQTvrkyufCN$$U0qBO-JJmdD2P-ph6wbyx" : {
+      "id" : "Wdo7X8gin3oQTvrkyufCN$$U0qBO-JJmdD2P-ph6wbyx",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "lab_malformed_products",
+        "slug" : "lab_malformed_products",
+        "x" : -1100,
+        "y" : -260,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "wOCPbZrHKOBf5vho5Z3L-$$9Sednz8JsUV0Q2UIRDFT4",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/lab_malformed_products"
+      }
+    },
+    "eum8rQCwpPADL2hT-Cuau$$9nhZdAp91IYjzPF7RUJZA" : {
+      "id" : "eum8rQCwpPADL2hT-Cuau$$9nhZdAp91IYjzPF7RUJZA",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "select_product_fields",
+        "slug" : "select_product_fields",
+        "x" : -900,
+        "y" : -260,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RtImibfDTk_CTyLUmmkzF$$n2ymdQ1tbtutQ9KT1WSlt",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "date_introduced",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The date when the product was first introduced to the market; Stored as a string.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "main_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The primary category under which the product is classified.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The name of the product.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "price_usd_cents",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The price of the product in USD, expressed in cents.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique long integer identifier for each product.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sub_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Specific classification within a broader product category, indicating the type or group the product belongs to.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "VfANhWTLos3B0mJT1JmQP$$Gf2a6kiGBXq-wLLpiknHs",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "date_introduced",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "to_date(date_introduced)"
+          },
+          "description" : ""
+        }, {
+          "target" : "main_category",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "main_category"
+          },
+          "description" : ""
+        }, {
+          "target" : "name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "name"
+          },
+          "description" : ""
+        }, {
+          "target" : "price_usd_cents",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(price_usd_cents AS LONG)"
+          },
+          "description" : ""
+        }, {
+          "target" : "product_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "product_id"
+          },
+          "description" : ""
+        }, {
+          "target" : "sub_category",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "sub_category"
+          },
+          "description" : ""
+        } ],
+        "importString" : "date_introduced,date_introduced\nmain_category,main_category\nname,name\nprice_usd_cents,price_usd_cents\nproduct_id,product_id\nsub_category,sub_category",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "RtImibfDTk_CTyLUmmkzF$$n2ymdQ1tbtutQ9KT1WSlt##main_category", "RtImibfDTk_CTyLUmmkzF$$n2ymdQ1tbtutQ9KT1WSlt##date_introduced", "RtImibfDTk_CTyLUmmkzF$$n2ymdQ1tbtutQ9KT1WSlt##sub_category", "RtImibfDTk_CTyLUmmkzF$$n2ymdQ1tbtutQ9KT1WSlt##name", "RtImibfDTk_CTyLUmmkzF$$n2ymdQ1tbtutQ9KT1WSlt##product_id", "RtImibfDTk_CTyLUmmkzF$$n2ymdQ1tbtutQ9KT1WSlt##price_usd_cents" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "I8Et3yQq7wDiQpqx5xjYh$$mL2XIEc3RqzP2vWZM0x5F" : {
+      "id" : "I8Et3yQq7wDiQpqx5xjYh$$mL2XIEc3RqzP2vWZM0x5F",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_non_null_prices",
+        "slug" : "filter_non_null_prices",
+        "x" : -700,
+        "y" : -260,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "U5Q64nstCmrWdKPWztaen$$5dhAn67EoOqQ497tPZJjG",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "date_introduced",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "main_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The primary category under which the product is classified.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The name of the product.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "price_usd_cents",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique long integer identifier for each product.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sub_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Specific classification within a broader product category, indicating the type or group the product belongs to.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "CBP7zM8TA-TWPBCkj-uuH$$NQDa64d1to36LyOU9Pl5N",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "U5Q64nstCmrWdKPWztaen$$5dhAn67EoOqQ497tPZJjG##price_usd_cents" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "isnotnull(price_usd_cents)"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.46&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "26A4kF-uSAiAR736jO3uh$$vsC7nDfLgu6ZPYeis6zfl" : {
+      "id" : "26A4kF-uSAiAR736jO3uh$$vsC7nDfLgu6ZPYeis6zfl",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "bronze_cleaned_products",
+        "slug" : "bronze_cleaned_products",
+        "x" : -520,
+        "y" : -260,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Gh8TZN4utg5twItIRqEuR$$QqpHGSRdlFUi61D95gm5H",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "date_introduced",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "main_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The primary category under which the product is classified.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The name of the product.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "price_usd_cents",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique long integer identifier for each product.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sub_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Specific classification within a broader product category, indicating the type or group the product belongs to.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/bronze_cleaned_products"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

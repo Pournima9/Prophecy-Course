@@ -1,0 +1,310 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "8816",
+    "jobId" : "jobs/daily_incremental_refresh",
+    "name" : "demo_daily_incremental_refresh",
+    "schedule" : "0 0/30 * * * ? *",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "accessControlList" : [ ]
+  },
+  "processes" : {
+    "q7GW5uLSVePdzNlmfy52r$$qZ1DbEF0ty7o9lLw8IfiM" : {
+      "id" : "q7GW5uLSVePdzNlmfy52r$$qZ1DbEF0ty7o9lLw8IfiM",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "silver_fct_tables",
+        "slug" : "silver_fct_tables",
+        "x" : -180,
+        "y" : 80
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wZa2Czm7r9Nggj9C1-plC$$cd7oqFLQ34tnpNC3eRRWT",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "EcwPmNugsime4cPeUmh1e$$wkynDbBbYpb1JOqIIM1-q",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/silver_fct_tables",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "bronze",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "bronze"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "silver",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "silver"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "course-template" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        },
+        "projectId" : "57619"
+      }
+    },
+    "-H3zICjgq0o-dJh7Btx9K" : {
+      "id" : "-H3zICjgq0o-dJh7Btx9K",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "gold-sales-reports",
+        "slug" : "gold_sales_reports",
+        "x" : 80,
+        "y" : 80
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "in",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "out",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/gold-sales-reports",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "SubCatgTop10Sales",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          }, {
+            "name" : "MainCatTop10Sales",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          }, {
+            "name" : "Top10Sales_1",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          }, {
+            "name" : "bronze",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "bronze"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "silver",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "silver"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "gold",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "gold"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "course-template" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        },
+        "projectId" : "57619"
+      }
+    },
+    "LoMaBNuIimOITVhBJ3NWJ$$0XyC4_dwYKOjtOnk0NLCx" : {
+      "id" : "LoMaBNuIimOITVhBJ3NWJ$$0XyC4_dwYKOjtOnk0NLCx",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "set_dt",
+        "slug" : "set_dt",
+        "x" : -680,
+        "y" : 80
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "jtMKpiuz8A7ER5U5bJQQU$$RMlXys_Cb7ISZy5BXc9ls",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "cSPnzjdhxPUJsixeRJsFs$$TR90CU8k5fIiNi9Y_U3K5",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "code" : "from datetime import date, timedelta, datetime\n\n# typical calcuation of current day minus 1\nd = date.today() - timedelta(days=1)\ndt = d.isoformat()\n\n# special case where we fix the year to 2023 where we have data\nday_of_year = d.timetuple().tm_yday\nd = datetime.strptime(\"2023\" + \"-\" + str(day_of_year), \"%Y-%j\").date()\ndt = d.isoformat()\n\n# set the parameter with dbutils\ndbutils.jobs.taskValues.set(key = 'dt', value = dt)"
+      }
+    },
+    "90L-Bu8gurw-JgEyx_dnI$$ppajPeRq357yIk4E6dle4" : {
+      "id" : "90L-Bu8gurw-JgEyx_dnI$$ppajPeRq357yIk4E6dle4",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "incremental_load_bronze",
+        "slug" : "incremental_load_bronze",
+        "x" : -440,
+        "y" : 80
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BFpDQQBVOTjStiIb980Oa$$y2eqnE0r8eooRHxE-F8IQ",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "jzeUQuOpn5y6eG-lp7MW9$$1aK9ZdYCsSMCPMK6yWDmg",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/incremental-load-bronze-example",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "dt",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "2023-01-05"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "source_path",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "dbfs:/course_lab/rainforest_raw_data"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "bronze",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "bronze"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "course-template" : [ "default" ]
+          },
+          "overrides" : {
+            "dt" : "{{tasks.set_dt.values.dt}}"
+          },
+          "selectedInstance" : "default"
+        },
+        "projectId" : "57619"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "LunfJhGjhaVTGeE92AzlA$$9q9xGvpxnDuPpf9D9DUFD",
+    "source" : "q7GW5uLSVePdzNlmfy52r$$qZ1DbEF0ty7o9lLw8IfiM",
+    "target" : "-H3zICjgq0o-dJh7Btx9K",
+    "sourcePort" : "EcwPmNugsime4cPeUmh1e$$wkynDbBbYpb1JOqIIM1-q",
+    "targetPort" : "in"
+  }, {
+    "id" : "xA26m5zNXEQ2Wq-GJGpGL",
+    "source" : "LoMaBNuIimOITVhBJ3NWJ$$0XyC4_dwYKOjtOnk0NLCx",
+    "target" : "90L-Bu8gurw-JgEyx_dnI$$ppajPeRq357yIk4E6dle4",
+    "sourcePort" : "cSPnzjdhxPUJsixeRJsFs$$TR90CU8k5fIiNi9Y_U3K5",
+    "targetPort" : "BFpDQQBVOTjStiIb980Oa$$y2eqnE0r8eooRHxE-F8IQ"
+  }, {
+    "id" : "m1qIesEE0d9DI81MPrb05",
+    "source" : "90L-Bu8gurw-JgEyx_dnI$$ppajPeRq357yIk4E6dle4",
+    "target" : "q7GW5uLSVePdzNlmfy52r$$qZ1DbEF0ty7o9lLw8IfiM",
+    "sourcePort" : "jzeUQuOpn5y6eG-lp7MW9$$1aK9ZdYCsSMCPMK6yWDmg",
+    "targetPort" : "wZa2Czm7r9Nggj9C1-plC$$cd7oqFLQ34tnpNC3eRRWT"
+  } ]
+}
